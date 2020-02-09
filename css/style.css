@@ -10,8 +10,21 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-
 }
+
+.background {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    background-image: url('https://source.unsplash.com/vHnVew5foFU/1920x1080');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+
+  }
 
 .main{
     position: absolute;
@@ -21,11 +34,31 @@ body{
 }
 
 .headcover{
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: 0;
     height: 100vh;
     min-height: 500px;
+    background-image: url('https://source.unsplash.com/vHnVew5foFU/1920x1080');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    
+}
+
+.headcover2{
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    height: 100vh;
+    min-height: 500px;
+    background-image: url('https://source.unsplash.com/vHnVew5foFU/1920x1080');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
 }
 
 div.item{
@@ -37,3 +70,16 @@ div.item{
     box-sizing: content-box;
 }
 
+.header-photo{
+    background: url(https://source.unsplash.com/vHnVew5foFU/1920x1080);
+    background-repeat: no-repeat;
+    position: relative; 
+    background-size: cover; 
+}
+
+.page-caption { padding-top: 170px; padding-bottom: 174px; }
+.page-title { font-size: 46px; line-height: 1; color: #fff; font-weight: 600; text-align: center; }
+
+.card-section { position: relative; bottom: 60px; }
+.card-block { padding: 80px; }
+.section-title { margin-bottom: 60px; }

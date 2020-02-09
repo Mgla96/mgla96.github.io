@@ -32,7 +32,7 @@ body{
     width: 100%;
     color: white;
 }
-
+h2 { font-size: 20px; line-height: 38px; }
 .headcover{
     display: block;
     top: 0;
@@ -64,7 +64,7 @@ body{
 div.item{
     display: inline-block;
     text-align: center;
-}
+} 
 
 .selector-for-some-widget{
     box-sizing: content-box;
@@ -83,3 +83,23 @@ div.item{
 .card-section { position: relative; bottom: 60px; }
 .card-block { padding: 80px; }
 .section-title { margin-bottom: 60px; }
+
+.image {
+    -webkit-filter: brightness(100%);
+	-moz-filter: brightness(100%);
+	-o-filter: brightness(100%);
+	-ms-filter: brightness(100%);
+	filter: brightness(100%);
+}
+
+.image:hover{
+    -webkit-filter: brightness(70%);
+	-moz-filter: brightness(70%);
+	-o-filter: brightness(70%);
+	-ms-filter: brightness(70%);
+	filter: brightness(70%);
+}
+.dark {
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+}

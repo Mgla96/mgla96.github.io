@@ -55,6 +55,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                   
                     <div class="page-caption" >
                         <div data-aos="zoom-in" data-aos-duration="2000">
                             <h1 class="font-weight-light page-title">Hi! Welcome to my portfolio</h1>
@@ -63,6 +64,7 @@
                             <p class ="lead page-title">This website is still under construction</p>
                         </div>
                     </div>
+                            
                 </div>
             </div>
         </div>
@@ -91,12 +93,32 @@
                         <!-- section-title -->
                         <div class="section-title mb-0">
                             <h3>My Projects Will Go Here</h3>
-                        </div>
+                            <!--
+                            <h1 class="ml11">
+                                    <span class="page-caption">
+                                        <span class="line line1"></span>
+                                        <span class="letters">My Projects Will Go Here</span>
+                                    </span>
+                            </h1>
+                            -->
+                
+                        </div>   
+                            <div class="row mb-3">
+                                    <div class="col text-center">
+                                        <button type="button" class="btn btn-outline-dark " data-rel="all">All</button>
+                                        <button type="button" class="btn btn-outline-dark " data-rel="1">Web</button>
+                                        <button type="button" class="btn btn-outline-dark " data-rel="2">Mobile</button>
+                                        <button type="button" class="btn btn-outline-dark" data-rel="3">Other</button>
+                                    </div>
+    
+                            </div>
+
                             <div class="row">
+                                    
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 text-center">
                                     <div class="mt-2">
                                     <a href="#">
-                                        <img src="https://source.unsplash.com/b21Ty33CqVs/200x200" style= "width: 100%; height: 100%" class="rounded image dark" alt="...">
+                                        <img src="https://source.unsplash.com/EknN2SI7X80/200x200" style= "width: 100%; height: 100%" class="rounded image dark" alt="...">
                                     </a>
                                     </div>
                                     <div class="mt-2">
@@ -183,7 +205,6 @@
                                     
                                 </div>
                             </div>
-                         
 
                         <h3>More Things Here</h3> 
                         <!-- /.section-title -->
@@ -192,6 +213,8 @@
             </div>
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center">
+                    <h3> stuff</h3>
+                  
                 </div>
             </div>
         </div>
@@ -228,28 +251,29 @@
         window.onload = function() {
           Particles.init({
             selector: '.background',
-            maxParticles: 380,
-            color:'#48F2E3',
+            maxParticles: 60,
+            color:'#ffffff',
+            connectParticles:true,
             responsive:[
                 {
                     breakpoint: 768,
                     options: {
-                        maxParticles: 300,
-                        color: '#48F2E3',
-                        connectParticles: false 
+                        maxParticles: 40,
+                        color: '#ffffff',
+                        connectParticles: true 
                     }
                 }, {
                     breakpoint: 425,
                     options:{
-                        maxParticles: 200,
-                        connectParticles: false,
-                        color:'#48F2E3'
+                        maxParticles: 30,
+                        connectParticles: true,
+                        color:'#ffffff'
                     }
                 }, {
                     breakpoint: 320,
                     options: {
                         maxParticles: 70,
-                        connectParticles: false,
+                        connectParticles: true,
                         color:'#48F2E3'
                     }
                 }
@@ -259,9 +283,61 @@
           });
         };
     </script>   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <script>
         AOS.init();
     </script>
+    <!--
+    <script>
+    $(function() {
+        var selectedClass = "";
+        $(".filter").click(function(){
+            selectedClass = $(this).attr("data-rel");
+            $("#gallery").fadeTo(100, 0.1);
+            $("#gallery div").not("."+selectedClass).fadeOut().removeClass('animation');
+            setTimeout(function() {
+                $("."+selectedClass).fadeIn().addClass('animation');
+                $("#gallery").fadeTo(300, 1);
+            }, 300);
+        });
+    }); 
+    </script>
+    -->
+<!--
+    <script>
+        var textWrapper = document.querySelector('.ml11 .letters');
+textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: true})
+  .add({
+    targets: '.ml11 .line',
+    scaleY: [0,1],
+    opacity: [0.5,1],
+    easing: "easeOutExpo",
+    duration: 700
+  })
+  .add({
+    targets: '.ml11 .line',
+    translateX: [0, document.querySelector('.ml11 .letters').getBoundingClientRect().width + 10],
+    easing: "easeOutExpo",
+    duration: 700,
+    delay: 100
+  }).add({
+    targets: '.ml11 .letter',
+    opacity: [0,1],
+    easing: "easeOutExpo",
+    duration: 600,
+    offset: '-=775',
+    delay: (el, i) => 34 * (i+1)
+  }).add({
+    targets: '.ml11',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });
+    </script>
+    -->
 </body>
 
 </html>

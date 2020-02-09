@@ -1,1 +1,3 @@
-# mgla96.github.io
+# Personal Portfolio
+
+This is a website I am currently developing to showcase my projects as well as interests.

@@ -291,3 +291,9 @@ div.item{
     width: 100%;
     color: white;
   }
+
+  .resumecontainer{
+    width: 100%;
+    object-fit: cover;
+    
+  }

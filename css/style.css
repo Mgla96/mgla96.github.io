@@ -279,3 +279,15 @@ div.item{
     line-height: 1em;
   }
 
+
+  .thumbnail {
+    position: relative;
+  }
+
+  .caption {
+    position: absolute;
+    top: 20%;
+    left: 0;
+    width: 100%;
+    color: white;
+  }

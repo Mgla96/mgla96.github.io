@@ -236,6 +236,13 @@ div.item{
 }
 
 
+@media only screen and (max-width:749px) {
+  .header-photo {
+    background-attachment: inherit;
+  }
+}
+
+
 .page-caption { padding-top: 170px; padding-bottom: 174px; }
 .page-title { 
     line-height: 1; 

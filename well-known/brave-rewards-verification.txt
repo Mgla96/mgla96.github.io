@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: mattgottlieb.me
+Token: 33530851b0f56dfacc4175f3f4b90b5fbfb6673df2f2b223f5b70378bebb265c

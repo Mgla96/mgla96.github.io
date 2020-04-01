@@ -263,6 +263,10 @@ div.item{
     width: 100%;
   }
   .container { width: 100%; padding: 0px } 
+  .card-block{
+    width: 100%; 
+    padding: 0px
+  }
 }
 
 

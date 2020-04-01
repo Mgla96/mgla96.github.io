@@ -255,10 +255,19 @@ div.item{
     background-size: cover;
 }
 
-
+/*
 @media only screen and (max-width:749px) {
   .header-photo {
     background-attachment: inherit;
+  }
+}
+*/
+@media only screen and (max-width:767px) {
+  .header-photo {
+    background-attachment: inherit;
+  }
+  .card-body{
+    width: 100%;
   }
 }
 

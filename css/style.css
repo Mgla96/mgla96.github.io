@@ -305,7 +305,9 @@ div.item{
 .card-section { position: relative; bottom: 60px; }
 .card-block { padding: 2%; }
 
-
+iframe[seamless] {
+  display: block;
+}
 
 
 .section-title { margin-bottom: 60px; }
@@ -390,6 +392,7 @@ div.item{
   }
 
 
+  /*
 .iframe-container {
   overflow: hidden;
   padding-top: 56.25%;
@@ -404,9 +407,10 @@ div.item{
    top: 0;
    width: 100%;
 }
- 
+ */
 /* 4x3 Aspect Ratio */
+/*
 .iframe-container-4x3 {
   padding-top: 75%;
 }
-
+*/

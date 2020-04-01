@@ -297,7 +297,7 @@ div.item{
         width: 100%;
 }
 .card-section { position: relative; bottom: 60px; }
-.card-block { padding: 80px; }
+.card-block { padding: 2%; }
 
 
 
@@ -381,7 +381,6 @@ div.item{
   .resumecontainer{
     width: 100%;
     object-fit: cover;
-    
   }
 
 

@@ -90,7 +90,6 @@ p {
   max-width: 100%;
 }
 
-
 p {
   
     margin-top: 0;
@@ -267,6 +266,9 @@ div.item{
     background-attachment: inherit;
   }
   .card-body{
+    width: 100%;
+  }
+  .container{
     width: 100%;
   }
 }

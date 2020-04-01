@@ -42,8 +42,23 @@ h6,
   margin-bottom: 10px;
 }
 
+p.ex1 {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+/*
+p {
+  font-size: 20rem;
+}
+*/
+
 .optionButton {
   width: 100%;
+}
+
+.styledTitle {
+  height: 20px;
 }
 
 @media (min-width: 768px) {
@@ -100,6 +115,11 @@ h2,
 
 h3,
 .h3 {
+  font-size: 1.5625rem;
+  line-height: 1.4em;
+}
+
+.spacingstyle {
   font-size: 1.5625rem;
   line-height: 1.4em;
 }

@@ -287,6 +287,12 @@ div.item{
     border-radius: 6px;
     box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
   }
+
+.main-raiser {
+    margin: -3.75em 1.875em 0em;
+    border-radius: 0.375em;
+    box-shadow: 0 1em 1.5em 0.125em rgba(0, 0, 0, 0.14), 0 0.375em 1.875em 0.3125em rgba(0, 0, 0, 0.12), 0 0.5em 0.625em -0.3125em rgba(0, 0, 0, 0.2);
+  }
 .card { 
         font-size: .875rem;
         border: 0;

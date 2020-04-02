@@ -54,6 +54,14 @@ p.ex1 {
 .styledTitle {
   height: 20px;
 }
+.embed-responsive-210by297 {
+  padding-bottom: 141.42%;
+  }
+/*
+#pdf_content {
+  height : auto;
+  width : 100%;
+}*/
 
 /*
 @media (min-width: 768px) {

@@ -143,6 +143,33 @@
         scene.add(cube);
         
 
+        // create an AudioListener and add it to the camera
+var listener = new THREE.AudioListener();
+camera.add( listener );
+
+// create the PositionalAudio object (passing in the listener)
+var sound = new THREE.PositionalAudio( listener );
+
+// load a sound and set it as the PositionalAudio object's buffer
+var audioLoader = new THREE.AudioLoader();
+audioLoader.load( 'css/sounds/lukrembo.mp3', function( buffer ) {
+	sound.setBuffer( buffer );
+	sound.setRefDistance( 20 );
+	sound.play();
+});
+// create an object for the sound to play from
+var sphere = new THREE.SphereBufferGeometry( 20, 32, 16 );
+var material = new THREE.MeshPhongMaterial( { color: 0xff2200, wireframe:true} );
+var mesh = new THREE.Mesh( sphere, material );
+scene.add( mesh );
+
+// finally add the sound to the mesh
+mesh.add( sound );
+
+
+
+
+
         //camera.position.z = 5;
         //var ambientLight = new THREE.Ambientlight(0xFFFFFF, 0.8);
         
@@ -152,6 +179,9 @@
 
             cube.rotation.x += 0.01;
             cube.rotation.y += 0.01;
+
+            mesh.rotation.x += 0.01;
+            mesh.rotation.y += 0.01;
         
            //bgMesh.position.copy(camera.position);
            //renderer.render(bgScene, camera);

@@ -40,11 +40,11 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.html#home">
+                        <a class="nav-link" href="index.html#home">
                             <ion-icon style="margin-right: 5px" name="home"></ion-icon>Home
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a class="nav-link" href="#about">
                             <ion-icon style="margin-right: 5px" name="person"></ion-icon>About
                         </a>
@@ -68,359 +68,188 @@
             </div>
         </div>
     </nav>
+    <script src="js/three.js"></script>
+    <!-- <script src="js/PointerLockControls.js"></script> -->
+    <script src="js/OrbitControls.js"></script>
+    <script src="js/GLTFLoader.js"></script>
+    <script>
+        //import * as THREE from 'three.js';
+       // function init(){
+        var scene = new THREE.Scene();
+            //var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        var camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 45, 30000);
+        camera.position.set(-900, -200, -900);
+        renderer=new THREE.WebGLRenderer({antialias:true});
+        var canvas = document.createElement('canvas');
+        var context = canvas.getContext('webgl2', { alpha: true });
+        var renderer = new THREE.WebGLRenderer({ canvas: canvas, context: context });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        controls = new THREE.OrbitControls(camera, renderer.domElement);
+        controls.addEventListener('change', renderer);
+
+        let materialArray = [];
+        let texture_ft = new THREE.TextureLoader().load('css/images/skybox2/mystic_ft.jpg');
+        let texture_bk = new THREE.TextureLoader().load('css/images/skybox2/mystic_bk.jpg');
+        let texture_up = new THREE.TextureLoader().load('css/images/skybox2/mystic_up.jpg');
+        let texture_dn = new THREE.TextureLoader().load('css/images/skybox2/mystic_dn.jpg');
+        let texture_rt = new THREE.TextureLoader().load('css/images/skybox2/mystic_rt.jpg');
+        let texture_lf = new THREE.TextureLoader().load('css/images/skybox2/mystic_lf.jpg');
+
+        materialArray.push(new THREE.MeshBasicMaterial({map: texture_ft}));
+        materialArray.push(new THREE.MeshBasicMaterial({map: texture_bk}));
+        materialArray.push(new THREE.MeshBasicMaterial({map: texture_up}));
+        materialArray.push(new THREE.MeshBasicMaterial({map: texture_dn}));
+        materialArray.push(new THREE.MeshBasicMaterial({map: texture_rt}));
+        materialArray.push(new THREE.MeshBasicMaterial({map: texture_lf}));
+
+        for(let i=0; i<6; i++)
+            materialArray[i].side = THREE.BackSide;
 
 
-    <div class="header-photo main" id="home">
-        <canvas class="background"></canvas>
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                    <div class="page-caption">
-                        <div data-aos="zoom-in" data-aos-duration="2000">
-                            <h1 class="page-title">Hi! Welcome to my portfolio</h1>
-                        </div>
-                        <div data-aos="fade-up" data-aos-duration="2500">
-                            <h4 class="lead page-title">About Me</h4>
-                        </div>
-                    </div>
+        let skyboxGeo = new THREE.BoxGeometry(10000,10000,10000);
+        let skybox = new THREE.Mesh(skyboxGeo, materialArray);
+        scene.add(skybox);
+        
 
-                </div>
-            </div>
-        </div>
-    </div>
-    <div>
-        <div class="container card-section bg-white main-raiser">
-            <div class="card-block mb30" id="projects">
-                <div class="p-3 mb-5 rounded">
-                    <div class="section-title mb-0 text-center">
-                        <h3>About Me</h3>
-                    </div>
 
-                    <div class="mt-5 container text-center">
-                        <div class="row">
-                            <div class="mb-5 mbr-cards-col col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                                <div class="team-item news c-info">
-                                    <div class="image">
-                                        <figure
-                                            class="mbr-figure mbr-figure--adapted mbr-figure--caption-inside-bottom mbr-figure--full-width ">
-                                            <img src="css/images/oceanrecovery.JPG"
-                                                class="mbr-figure__img rounded img-fluid" alt="Card 1"
-                                                title="Ocean Recovery Lab">
-                                        </figure>
-                                    </div>
-                                    <h3 class="styled">Ocean Recovery Lab</h3>
-                                    <h6 class="styled position">Software Engineer</h6>
-                                    <p class="software">Software: Python</p>
-                                    <div class="separator"></div>
-                                    <button class="btn btn-outline-dark" type="button" data-toggle="collapse"
-                                        data-target="#collapse1" aria-expanded="false" aria-controls="collapseExample">
-                                        Learn More
-                                    </button>
-                                    <div class="collapse" id="collapse1">
-                                        <div class="card card-body">
-                                            <p>Created scripts to assist researchers at the Ocean Recoveries Lab
-                                                at UC
-                                                Santa Barbara, which focuses on preserving and recovering ocean
-                                                ecosystems.
-                                                These scripts help with the mathematical modeling of their collected
-                                                data.</p>
-                                            <p class="date">Jan 2020 - Mar 2020</p>
-                                        </div>
-                                        <button
-                                            onclick="window.location.href = 'https://github.com/Mgla96/OceanRecoveryLabScripts'"
-                                            type="button" class="btn btn-outline-dark ">
-                                            View on <i class="fab fa-github"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
+       // var geometry = new THREE.CubeGeometry(10000, 10000, 10000);
+     //const loader = new THREE.CubeTextureLoader()
+        /*
+        window.addEventListener('resize', function () {
+            var width = window.innerWidth;
+            var height = window.innerHeight;
+            renderer.setSize(width, height);
+            camera.aspect = width / height;
+            camera.updateProjectionMatrix();
+        });
+        */
+        /*
+        var cubeMaterials = [
+            new THREE.MeshBasicMaterial({map, new THREE.TextureLoader().load("css/images/skyboxtropical/pz.png"), side:THREE.DoubleSide}),
+            new THREE.MeshBasicMaterial({map, new THREE.TextureLoader().load("css/images/skyboxtropical/nz.png"), side:THREE.DoubleSide}),
+            new THREE.MeshBasicMaterial({map, new THREE.TextureLoader().load("css/images/skyboxtropical/py.png"), side:THREE.DoubleSide}),
+            new THREE.MeshBasicMaterial({map, new THREE.TextureLoader().load("css/images/skyboxtropical/ny.png"), side:THREE.DoubleSide}),
+            new THREE.MeshBasicMaterial({map, new THREE.TextureLoader().load("css/images/skyboxtropical/px.png"), side:THREE.DoubleSide}),
+            new THREE.MeshBasicMaterial({map, new THREE.TextureLoader().load("css/images/skyboxtropical/nx.png"), side:THREE.DoubleSide}),
+        ];
+        */
+        /*
+        var cubeMaterial = new THREE.MeshFaceMaterial(cubeMaterials);
+        var cube = new THREE.Mesh(geometry, cubeMaterial);
+        scene.add(cube);
+        var ambientLight = new THREE.AmbientLight(0xFFFFFF, 0.3);
+        */
+        /*
+        var loader = new THREE.GLTFLoader();
+        loader.load('path/to/model.glb', function (gltf) {
+            scene.add(gltf.scene);
+        }, undefined, function (error) {
+            console.error(error);
+        });
+        */
+        
+        //var geometry = new THREE.CylinderGeometry();
+        //var material = new THREE.MeshBasicMaterial({ color: 0x00ff00, wireframe:true });
+       // var cube = new THREE.Mesh(geometry, material);
+       // scene.add(cube);
+        
 
-                            <div class="mb-5 mbr-cards-col col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                                <div class="team-item news c-info">
-                                    <div class="image">
-                                        <figure
-                                            class="mbr-figure mbr-figure--adapted mbr-figure--caption-inside-bottom mbr-figure--full-width">
-                                            <img src="css/images/cowtemp.png" class="mbr-figure__img rounded img-fluid"
-                                                alt="Multiplayer Simulation Game" title="Multiplayer Simulation Game">
-                                        </figure>
-                                    </div>
+        //camera.position.z = 5;
+        //var ambientLight = new THREE.Ambientlight(0xFFFFFF, 0.8);
+        
+        var animate = function () {
+            renderer.render(scene, camera);
+            requestAnimationFrame(animate);
 
-                                    <h3 class="">Multiplayer Simulation Game</h3>
-                                    <h6 class="styled position">Software Engineer</h6>
-                                    <p class="software">Software: MySQL, Express.js, Node.js</p>
-                                    <div class="separator"></div>
-                                    <button class="btn btn-outline-dark" type="button" data-toggle="collapse"
-                                        data-target="#collapse2" aria-expanded="false" aria-controls="collapseExample">
-                                        Learn More
-                                    </button>
-                                    <div class="collapse" id="collapse2">
-                                        <div class="card card-body">
-                                            <p>Implemented a multiplayer simulation game for Professor de Vries
-                                                which
-                                                demonstrates the detrimental effects of unregulated human use of
-                                                shared
-                                                finite resources. This game is used in his CHEM 123 classes at
-                                                UC Santa
-                                                Barbara as an interactive learning tool for his students.</p>
-                                            <p class="date">Jan 2020 - Apr 2020</p>
-                                        </div>
-                                        <button onclick="window.location.href = 'https://github.com/Mgla96/HappyCows'"
-                                            type="button" class="btn btn-outline-dark ">
-                                            View on <i class="fab fa-github"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
+            //cube.rotation.x += 0.01;
+            //cube.rotation.y += 0.01;
+        
+           //bgMesh.position.copy(camera.position);
+           //renderer.render(bgScene, camera);
+        };
+        
+        /** WEBGL check to see if compatible with user device
+        * @author alteredq / http://alteredqualia.com/
+        * @author mrdoob / http://mrdoob.com/
+        */
 
-                            <div class="mb-5 mbr-cards-col col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                                <div class="team-item news c-info">
-                                    <div class="image">
-                                        <figure
-                                            class="mbr-figure mbr-figure--adapted mbr-figure--caption-inside-bottom mbr-figure--full-width ">
-                                            <img src="css/images/DrinkLocCar.png"
-                                                class="mbr-figure__img rounded img-fluid" alt="Card 3" title="Card 3">
-                                        </figure>
-                                    </div>
-                                    <h3 class="styled">Locnes </h3>
-                                    <h6 class="styled position">Web Developer</h6>
-                                    <p class="software">Software: HTML, CSS, JavaScript, Bootstrap, Shopify API
-                                    </p>
-                                    <div class="separator"></div>
-                                    <button class="btn btn-outline-dark" type="button" data-toggle="collapse"
-                                        data-target="#collapse3" aria-expanded="false" aria-controls="collapseExample">
-                                        Learn More
-                                    </button>
-                                    <div class="collapse" id="collapse3">
-                                        <div class="card card-body">
-                                            <p>Designed and developed the website and ecommerce platform for a
-                                                startup called LocNes. This website is on standby ready to go live once
-                                                further manufacturing progress is made</p>
-                                            <p class="date">Mar 2019 - Jan 2020</p>
-                                        </div>
-                                        <button onclick="window.location.href = 'https://findlocnes.com'" type="button"
-                                            class="btn btn-outline-dark ">
-                                            findlocnes.com</i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
+        var WEBGL = {
+            isWebGLAvailable: function () {
+                try {
+                    var canvas = document.createElement('canvas');
+                    return !!(window.WebGLRenderingContext && (canvas.getContext('webgl') || canvas.getContext('experimental-webgl')));
+                } catch (e) {
+                    return false;
+                }
+            },
+            isWebGL2Available: function () {
+                try {
+                    var canvas = document.createElement('canvas');
+                    return !!(window.WebGL2RenderingContext && canvas.getContext('webgl2'));
+                } catch (e) {
+                    return false;
+                }
+            },
+            getWebGLErrorMessage: function () {
+                return this.getErrorMessage(1);
+            },
+            getWebGL2ErrorMessage: function () {
+                return this.getErrorMessage(2);
+            },
+            getErrorMessage: function (version) {
+                var names = {
+                    1: 'WebGL',
+                    2: 'WebGL 2'
+                };
+                var contexts = {
+                    1: window.WebGLRenderingContext,
+                    2: window.WebGL2RenderingContext
+                };
+                var message = 'Your $0 does not seem to support <a href="http://khronos.org/webgl/wiki/Getting_a_WebGL_Implementation" style="color:#000">$1</a>';
+                var element = document.createElement('div');
+                element.id = 'webglmessage';
+                element.style.fontFamily = 'monospace';
+                element.style.fontSize = '13px';
+                element.style.fontWeight = 'normal';
+                element.style.textAlign = 'center';
+                element.style.background = '#fff';
+                element.style.color = '#000';
+                element.style.padding = '1.5em';
+                element.style.width = '400px';
+                element.style.margin = '5em auto 0';
+                if (contexts[version]) {
+                    message = message.replace('$0', 'graphics card');
+                } else {
+                    message = message.replace('$0', 'browser');
+                }
+                message = message.replace('$1', names[version]);
+                element.innerHTML = message;
+                return element;
+            }
 
-                            <div class="mb-5 mbr-cards-col col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                                <div class="team-item news c-info">
-                                    <div class="image">
-                                        <figure
-                                            class="mbr-figure mbr-figure--adapted mbr-figure--caption-inside-bottom mbr-figure--full-width">
-                                            <img src="css/images/walterreed.png"
-                                                class="mbr-figure__img rounded img-fluid" alt="Walter Reed"
-                                                title="Walter Reed">
-                                        </figure>
-                                    </div>
-                                    <h3 class="">Walter Reed National Military Medical Center</h3>
-                                    <h6 class="styled position">Hardware Engineering Intern</h6>
-                                    <p class="software">Software: CAD</p>
-                                    <div class="separator"></div>
-                                    <button class="btn btn-outline-dark" type="button" data-toggle="collapse"
-                                        data-target="#collapse4" aria-expanded="false" aria-controls="collapseExample">
-                                        Learn More
-                                    </button>
-                                    <div class="collapse" id="collapse4">
-                                        <div class="card card-body">
-                                            <p>Gained hands on experience working in their state-of-the-art 3D
-                                                Printing facility, which focuses on creating devices for medical
-                                                applications such as prosthetics.
-                                                Produced multiple medical devices, which are still currently
-                                                being used to assist Doctors there.
-                                            </p>
-                                            <p class="date">Oct 2018 - Nov 2018</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+        };
 
-                            <div class="mb-5 mbr-cards-col col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                                <div class="team-item news c-info">
-                                    <div class="image">
-                                        <figure
-                                            class="mbr-figure mbr-figure--adapted mbr-figure--caption-inside-bottom mbr-figure--full-width">
-                                            <img src="css/images/java3.jpg" class="mbr-figure__img rounded img-fluid"
-                                                alt="Card 2" title="Card 2">
-                                        </figure>
-                                    </div>
-                                    <h3 class="">Bank Database & ATM Interface</h3>
-                                    <h6 class="styled position">Android Application</h6>
-                                    <p class="software">Software: Java, Java Database Connectivity API, SQL,
-                                        Oracle DBMS</p>
-                                    <div class="separator"></div>
-                                    <button class="btn btn-outline-dark" type="button" data-toggle="collapse"
-                                        data-target="#collapse5" aria-expanded="false" aria-controls="collapseExample">
-                                        Learn More
-                                    </button>
-                                    <div class="collapse" id="collapse5">
-                                        <div class="card card-body">
-                                            <p>Assembled a prototype account management system that maintains balance
-                                                information of all customer accounts, processes transactions, generates
-                                                monthly reports, and updates accounts with monthly interest. It features
-                                                a simulated ATM application for customers and an interface for Bank
-                                                employees.
-                                            </p>
-                                            <p class="date">Nov 2019 - Dec 2019</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+        //import { WEBGL } from 'js/WebGL.js';
 
-                            <div class="mb-5 mbr-cards-col col-lg-4 col-md-6 col-sm-12 col-xs-12 ">
-                                <div class="team-item news c-info">
-                                    <div class="image">
-                                        <figure
-                                            class="mbr-figure mbr-figure--adapted mbr-figure--caption-inside-bottom mbr-figure--full-width">
-                                            <img src="css/images/React_Native_Logo.png"
-                                                class="mbr-figure__img rounded img-fluid" alt="Card 2" title="Card 2">
-                                        </figure>
-                                    </div>
-                                    <h3 class="">College Rideshare</h3>
-                                    <h6 class="styled position">Cross-Platform Application</h6>
-                                    <p class="software">Software: XCode, React Native, Firestore, Google Maps
-                                        API</p>
-                                    <div class="separator"></div>
-                                    <button class="btn btn-outline-dark" type="button" data-toggle="collapse"
-                                        data-target="#collapse6" aria-expanded="false" aria-controls="collapseExample">
-                                        Learn More
-                                    </button>
-                                    <div class="collapse" id="collapse6">
-                                        <div class="card card-body">
-                                            <p>Developed a functional cross-platform Rideshare app for college students
-                                                with two other Computer Science students.
-                                            </p>
-                                            <p class="date">Apr 2018 - Jan 2019</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+        //import { WEBGL } from 'js/WebGL.js';
+        if (WEBGL.isWebGL2Available() === false) {
+            document.body.appendChild(WEBGL.getWebGL2ErrorMessage());
+        }
+        else {
+            animate();
+        }
 
-                            <div class="mb-5 mbr-cards-col col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                                <div class="team-item news c-info">
-                                    <div class="image">
-                                        <figure
-                                            class="mbr-figure mbr-figure--adapted mbr-figure--caption-inside-bottom mbr-figure--full-width">
-                                            <img src="css/images/linux.jpg" class="mbr-figure__img rounded img-fluid"
-                                                alt="Card 2" title="Card 2">
-                                        </figure>
-                                    </div>
-                                    <h3 class="">Operating System</h3>
-                                    <h6 class="styled position"></h6>
-                                    <p class="software">Software: C</p>
-                                    <div class="separator"></div>
-                                    <button class="btn btn-outline-dark" type="button" data-toggle="collapse"
-                                        data-target="#collapse7" aria-expanded="false" aria-controls="collapseExample">
-                                        Learn More
-                                    </button>
-                                    <div class="collapse" id="collapse7">
-                                        <div class="card card-body">
-                                            <p>Developed Linux Operating System in C for CS170 class at UCSB
-                                            </p>
-                                            <p class="date">Sep 2019 - Dec 2019</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="mb-5 mbr-cards-col col-lg-4 col-md-6 col-sm-12 col-xs-12 ">
-                                <div class="team-item news c-info">
-                                    <div class="image">
-                                        <figure
-                                            class="mbr-figure mbr-figure--adapted mbr-figure--caption-inside-bottom mbr-figure--full-width">
-                                            <img src="css/images/cr10.jpg" class="mbr-figure__img rounded img-fluid"
-                                                alt="Card 2" title="Card 2">
-                                        </figure>
-                                    </div>
-                                    <h3 class="">3D Printers & CAD</h3>
-                                    <h6 class="styled position">Mechanical</h6>
-                                    <p class="software"></p>
-                                    <div class="separator"></div>
-                                    <button class="btn btn-outline-dark" type="button" data-toggle="collapse"
-                                        data-target="#collapse8" aria-expanded="false" aria-controls="collapseExample">
-                                        Learn More
-                                    </button>
-                                    <div class="collapse" id="collapse8">
-                                        <div class="card card-body">
-                                            <p>Constructed a custom 3D Printer which uses a Raspberry Pi to
-                                                access the printer over the local network.
-                                                Gained experience with CAD by designing parts for projects made
-                                                with this printer.
-                                            </p>
-                                            <p class="date">Jan 2018 - Oct 2018</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="mb-5 mbr-cards-col col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                                <div class="team-item news c-info">
-                                    <div class="image">
-                                        <figure
-                                            class="mbr-figure mbr-figure--adapted mbr-figure--caption-inside-bottom mbr-figure--full-width">
-                                            <img class="img-fluid" src="css/images/quadcopterFinal.jpg"
-                                                class="mbr-figure__img rounded" alt="Card 2" title="Card 2">
-                                        </figure>
-                                    </div>
-                                    <h3 class="">Quadcopter</h3>
-                                    <h6 class="styled position">Mechanical</h6>
-                                    <p class="software"></p>
-                                    <div class="separator"></div>
-                                    <button class="btn btn-outline-dark" type="button" data-toggle="collapse"
-                                        data-target="#collapse9" aria-expanded="false" aria-controls="collapseExample">
-                                        Learn More
-                                    </button>
-                                    <div class="collapse" id="collapse9">
-                                        <div class="card card-body">
-                                            <p>Built a functional and fast first-person-view quadcopter to
-                                                gain a better understanding of how all the software and hardware
-                                                components work together.
-                                            </p>
-                                            <p class="date">Oct 2018 - Dec 2018</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="mb-5 mbr-cards-col col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                                <div class="team-item news c-info">
-                                    <div class="image">
-                                        <figure
-                                            class="mbr-figure mbr-figure--adapted mbr-figure--caption-inside-bottom mbr-figure--full-width">
-                                            <img class="img-fluid" src="css/images/miningRig.jpg"
-                                                class="mbr-figure__img rounded" alt="Card 2" title="Card 2">
-                                        </figure>
-                                    </div>
-                                    <h3 class="">Ethereum "Mining Rig" Computer</h3>
-                                    <h6 class="styled position">Mechanical</h6>
-                                    <p class="software"></p>
-                                    <div class="separator"></div>
-                                    <button class="btn btn-outline-dark" type="button" data-toggle="collapse"
-                                        data-target="#collapse10" aria-expanded="false" aria-controls="collapseExample">
-                                        Learn More
-                                    </button>
-                                    <div class="collapse" id="collapse10">
-                                        <div class="card card-body">
-                                            <p>Assembled a computer that uses hashing algorithms to process and
-                                                verify transactions between cryptocurrency users as well as
-                                                solve the nonce number for new blocks in the Ethereum
-                                                blockchain. Gained more experience with Hashing algorithms, GPU
-                                                flashing, BIOS editing, and Batch files.
-                                            </p>
-                                            <p class="date">Oct 2016 - Jan 2019</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
+
+
+    </script>
+
+    <!--
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
@@ -477,6 +306,9 @@
             $(this).addClass("active");
         });
     </script>
+    -->
+
+
 </body>
 
 </html>

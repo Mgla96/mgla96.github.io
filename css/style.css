@@ -332,7 +332,7 @@ iframe[seamless] {
 }
 
 
-.section-title { margin-bottom: 60px; }
+.section-title { margin-bottom: 2em; margin-top: 2em; }
 
 .image {
   -webkit-filter: brightness(100%);

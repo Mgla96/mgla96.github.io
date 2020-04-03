@@ -75,12 +75,23 @@
     <script src="js/GLTFLoader.js"></script>
     <script>
         //import * as THREE from 'three.js';
-       // function init(){
+        // function init(){
         var scene = new THREE.Scene();
-            //var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        //var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
         var camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 45, 30000);
-        camera.position.set(-900, -200, -900);
-        renderer=new THREE.WebGLRenderer({antialias:true});
+        //camera.position.set(-900, -200, -900);
+        camera.position.set(0, 10, 50)
+        const light = new THREE.DirectionalLight(0xffffff, 1, Infinity)
+        light.position.set(0, 0, 1)
+        camera.add(light)
+        scene.add(camera)
+
+        const sun = new THREE.DirectionalLight(0xffffcc)
+        sun.position.set(0, 1, 0)
+        scene.add(sun)
+
+
+        renderer = new THREE.WebGLRenderer({ antialias: true });
         var canvas = document.createElement('canvas');
         var context = canvas.getContext('webgl2', { alpha: true });
         var renderer = new THREE.WebGLRenderer({ canvas: canvas, context: context });
@@ -98,18 +109,18 @@
         let texture_rt = new THREE.TextureLoader().load('css/images/skybox2/yonder_rt.jpg');
         let texture_lf = new THREE.TextureLoader().load('css/images/skybox2/yonder_lf.jpg');
 
-        materialArray.push(new THREE.MeshBasicMaterial({map: texture_ft}));
-        materialArray.push(new THREE.MeshBasicMaterial({map: texture_bk}));
-        materialArray.push(new THREE.MeshBasicMaterial({map: texture_up}));
-        materialArray.push(new THREE.MeshBasicMaterial({map: texture_dn}));
-        materialArray.push(new THREE.MeshBasicMaterial({map: texture_rt}));
-        materialArray.push(new THREE.MeshBasicMaterial({map: texture_lf}));
+        materialArray.push(new THREE.MeshBasicMaterial({ map: texture_ft }));
+        materialArray.push(new THREE.MeshBasicMaterial({ map: texture_bk }));
+        materialArray.push(new THREE.MeshBasicMaterial({ map: texture_up }));
+        materialArray.push(new THREE.MeshBasicMaterial({ map: texture_dn }));
+        materialArray.push(new THREE.MeshBasicMaterial({ map: texture_rt }));
+        materialArray.push(new THREE.MeshBasicMaterial({ map: texture_lf }));
 
-        for(let i=0; i<6; i++)
+        for (let i = 0; i < 6; i++)
             materialArray[i].side = THREE.BackSide;
 
 
-        let skyboxGeo = new THREE.BoxGeometry(10000,10000,10000);
+        let skyboxGeo = new THREE.BoxGeometry(10000, 10000, 10000);
         let skybox = new THREE.Mesh(skyboxGeo, materialArray);
         scene.add(skybox);
 
@@ -120,61 +131,74 @@
             camera.aspect = width / height;
             camera.updateProjectionMatrix();
         });
-        
-    
-        /*
-        var cubeMaterial = new THREE.MeshFaceMaterial(cubeMaterials);
-        var cube = new THREE.Mesh(geometry, cubeMaterial);
-        scene.add(cube);
-        var ambientLight = new THREE.AmbientLight(0xFFFFFF, 0.3);
-        */
-        /*
-        var loader = new THREE.GLTFLoader();
-        loader.load('path/to/model.glb', function (gltf) {
-            scene.add(gltf.scene);
-        }, undefined, function (error) {
-            console.error(error);
-        });
-        */
-        
+
         var geometry = new THREE.CylinderGeometry();
-        var material = new THREE.MeshBasicMaterial({ color: 0x00ff00, wireframe:true });
+        var material = new THREE.MeshBasicMaterial({ color: 0x00ff00, wireframe: true });
         var cube = new THREE.Mesh(geometry, material);
         scene.add(cube);
-        
+
 
         // create an AudioListener and add it to the camera
-var listener = new THREE.AudioListener();
-camera.add( listener );
+        var listener = new THREE.AudioListener();
+        camera.add(listener);
 
-// create the PositionalAudio object (passing in the listener)
-var sound = new THREE.PositionalAudio( listener );
+        // create the PositionalAudio object (passing in the listener)
+        var sound = new THREE.PositionalAudio(listener);
 
-// load a sound and set it as the PositionalAudio object's buffer
-var audioLoader = new THREE.AudioLoader();
-audioLoader.load( 'css/sounds/lukrembo.mp3', function( buffer ) {
-	sound.setBuffer( buffer );
-	sound.setRefDistance( 20 );
-	sound.play();
-});
-// create an object for the sound to play from
-var sphere = new THREE.SphereBufferGeometry( 20, 32, 16 );
-var material = new THREE.MeshPhongMaterial( { color: 0xff2200, wireframe:true} );
-var mesh = new THREE.Mesh( sphere, material );
-scene.add( mesh );
+        // load a sound and set it as the PositionalAudio object's buffer
+        var audioLoader = new THREE.AudioLoader();
+        audioLoader.load('css/sounds/lukrembo.mp3', function (buffer) {
+            sound.setBuffer(buffer);
+            sound.setRefDistance(20);
+            sound.play();
+        });
+        // create an object for the sound to play from
+        var sphere = new THREE.SphereBufferGeometry(20, 32, 16);
+        var material = new THREE.MeshPhongMaterial({ color: 0xff2200, wireframe: true });
+        var mesh = new THREE.Mesh(sphere, material);
+        scene.add(mesh);
 
-// finally add the sound to the mesh
-mesh.add( sound );
-
-
+        // finally add the sound to the mesh
+        mesh.add(sound);
 
 
+let geo = new THREE.BoxBufferGeometry(10, 10, 10)
+let mat = new THREE.MeshLambertMaterial({
+    color: "red"
+})
 
-        //camera.position.z = 5;
-        //var ambientLight = new THREE.Ambientlight(0xFFFFFF, 0.8);
-        
+
+let mesh2 = new THREE.Mesh(geo, mat)
+scene.add(mesh2)
+
+let tex = new THREE.TextureLoader().load("https://upload.wikimedia.org/wikipedia/commons/4/4c/Grass_Texture.png")
+tex.anisotropy = 32
+tex.repeat.set(100, 100)
+tex.wrapT = THREE.RepeatWrapping
+tex.wrapS = THREE.RepeatWrapping
+geo = new THREE.PlaneBufferGeometry(10000, 10000)
+mat = new THREE.MeshLambertMaterial({
+  map: tex
+})
+mesh3 = new THREE.Mesh(geo, mat)
+mesh3.position.set(0, -5, 0)
+mesh3.rotation.set(Math.PI / -2, 0, 0)
+scene.add(mesh3)
+
+
+controls.maxPolarAngle = Math.PI / 2;
+
+
+let axis = new THREE.Vector3(0, 1, 0)
+function updateCamera() {
+  camera.position.applyAxisAngle(axis, 0.01)
+}
+
+
+
         var animate = function () {
             renderer.render(scene, camera);
+            camera.lookAt(scene.position)
             requestAnimationFrame(animate);
 
             cube.rotation.x += 0.01;
@@ -182,15 +206,8 @@ mesh.add( sound );
 
             mesh.rotation.x += 0.01;
             mesh.rotation.y += 0.01;
-        
-           //bgMesh.position.copy(camera.position);
-           //renderer.render(bgScene, camera);
+
         };
-        
-        /** WEBGL check to see if compatible with user device
-        * @author alteredq / http://alteredqualia.com/
-        * @author mrdoob / http://mrdoob.com/
-        */
 
         var WEBGL = {
             isWebGLAvailable: function () {
@@ -247,22 +264,12 @@ mesh.add( sound );
             }
 
         };
-
-        //import { WEBGL } from 'js/WebGL.js';
-
-        //import { WEBGL } from 'js/WebGL.js';
         if (WEBGL.isWebGL2Available() === false) {
             document.body.appendChild(WEBGL.getWebGL2ErrorMessage());
         }
         else {
             animate();
         }
-
-
-
-
-
-
 
     </script>
 

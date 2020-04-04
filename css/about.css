@@ -1,0 +1,119 @@
+body {
+  /*overflow-x: hidden;*/
+  overflow-x: visible;
+  overflow-y: scroll;
+	padding: 0;
+	margin: 0;
+}
+/*
+#viewport {
+    position: fixed; 
+   
+	  margin: 0;
+	  padding: 0;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+*/
+#viewport{
+  background-repeat: no-repeat;
+  position: fixed; 
+  /* parallax */
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+
+.page-wrapper {
+	padding: 0px;
+	margin: 12px 48px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: calc(100% - 2*48px);
+  word-wrap: break-word;
+  z-index: 2;
+}
+
+.page-caption { padding-top: 10.625em; padding-bottom: 10.875em; }
+.page-title { 
+    line-height: 1; 
+    color: #fff; 
+    font-weight: 700; 
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 25px;
+    min-height: 32px;
+      
+}
+
+
+:root{
+  --bgColor : hsla(242, 86%, 6%, 1);
+  --bgColorLight : hsla(242, 86%, 24%, 1);
+  --textColor : hsla(242, 86%, 88%, 1);
+  --textColorDark : hsla(242, 36%, 0%, 1);
+  --paperColor: hsla(242, 86%, 44%, 1);
+  --paperColorDark: hsla(242, 86%, 34%, 1);
+  --shadowColorFaint: hsla(0, 0%, 0%, 0.2);
+}
+
+::selected{
+  color: var(--textColorDark);
+}
+.header-photo{
+  background: url(images/background.jpeg);
+  height: 100vh;
+  background-repeat: no-repeat;
+  position: relative; 
+  /* parallax */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/*
+.foo {
+min-height: 33vh;
+margin-bottom: 10px;
+padding: 10px;
+color: white;
+text-transform: uppercase;
+}
+*/
+
+html, body{
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  
+  height: 100vh; 
+  width: 100vw;
+  
+  background: var(--bgColor);
+  background: linear-gradient(135deg, var(--bgColor), var(--bgColorLight));
+  color: var(--textColor);
+  font-family: 'Saira', sans-serif;
+  position: relative;
+}
+
+*{
+  box-sizing: border-box;
+  transition: all 0.12s cubic-bezier(0.42, 0.54, 0.22, 1.26);
+}
+/*
+audio {
+  position: absolute;
+  left: 10px;
+  bottom: -10px;
+  width: calc(100% - 20px);
+}
+
+audio.active{
+  bottom: 10px;
+}
+*/

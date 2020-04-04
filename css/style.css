@@ -22,6 +22,8 @@ body{
 }
 
 
+
+
 h1,
 h2,
 h3,
@@ -267,7 +269,6 @@ div.item{
     background-repeat: no-repeat;
     background-size: cover;
 }
-
 /*
 @media only screen and (max-width:749px) {
   .header-photo {

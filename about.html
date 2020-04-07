@@ -140,6 +140,7 @@
                         <div class="float-right page-caption">
                             <h1 id="ev2">Skills</h1>
                             <p>
+                                The languages I am most proficient in are C++, Python, Javascript,
                                 Mauris quis vulputate neque. Proin ullamcorper nisi libero. Praesent ac tincidunt est.
                                 Pellentesque convallis tincidunt felis, non dignissim sapien dignissim nec. Donec luctus
                                 ligula ligula, ut
@@ -274,7 +275,7 @@ function play() {
 
 
        // create an AudioListener and add it to the camera
-       /*
+       
        var listener = new THREE.AudioListener();
       camera.add( listener );
 
@@ -289,7 +290,7 @@ audioLoader.load( 'css/sounds/lukrembo.mp3', function( buffer ) {
 	sound.setVolume( 0.5 );
 	sound.play();
 });
-*/
+
     var renderer = new THREE.WebGLRenderer({ alpha: true,   antialias: true, canvas: document.getElementById("viewport") });
     renderer.setSize(window.innerWidth, window.innerHeight);
     var planeGeometry = new THREE.PlaneGeometry(800, 800, 20, 20);
@@ -411,36 +412,43 @@ audioLoader.load( 'css/sounds/lukrembo.mp3', function( buffer ) {
     window.addEventListener('resize', onWindowResize, false);
     window.addEventListener("wheel", updateCamera, true);
 
-    //document.getElementById("myBtn").addEventListener("mousedown", btn1clicked, false);
-    /*
-    let btn1 = document.getElementById("btn1");
-    let btn2 = document.getElementById("btn2");
-    let btn3 = document.getElementById("btn3");
-    btn1.addEventListener("click", btn1clicked);
-    btn1.addEventListener("mouseover", function(event){
-        event.target.style.color = "purple";
-        setTimeout(function() {
-            event.target.style.color = "";
-        }, 500);
-        sound2.play();
+    var element_position = $('#ev1').offset().top;
+    var screen_height = $(window).height();
+    var activation_offset = 0.5;//determines how far up the the page the element needs to be before triggering the function
+    var activation_point = element_position - (screen_height * activation_offset);
+    var max_scroll_height = $('body').height() - screen_height - 5;//-5 for a little bit of buffer
+
+    var element_position2 = $('#ev2').offset().top;
+    var activation_point2 = element_position2 - (screen_height * activation_offset);
+
+    var element_position3 = $('#ev3').offset().top;
+    var activation_point3 = element_position3 - (screen_height * activation_offset);
+
+    //Does something when user scrolls to it OR
+    //Does it when user has reached the bottom of the page and hasn't triggered the function yet
+    $(window).on('scroll', function() {
+        var y_scroll_pos = window.pageYOffset;
+        var element_in_view = (y_scroll_pos > activation_point) && (y_scroll_pos < activation_point2);
+        var element_in_view2 = (y_scroll_pos > activation_point2) && (y_scroll_pos < activation_point3);
+        var element_in_view3 = y_scroll_pos > activation_point3;
+
+        var has_reached_bottom_of_page = max_scroll_height <= y_scroll_pos && !element_in_view;
+        var has_reached_bottom_of_page2 = max_scroll_height <= y_scroll_pos && !element_in_view2;
+        
+        if (element_in_view) {
+            camera.position.set(-10,0,100);
+            sound.play();
+        } else if (element_in_view2){
+            camera.position.set(10,0,100);
+            sound.play();
+        } else if (element_in_view3){
+            camera.position.set(0,10,100);
+            sound.play();
+        } else {
+            //camera.position.set(10,0,100);
+            camera.position.set(0,0,100);
+        }
     });
-    btn2.addEventListener("click", btn2clicked);
-    btn2.addEventListener("mouseover", function(event){
-        event.target.style.color = "purple";
-        setTimeout(function() {
-            event.target.style.color = "";
-        }, 500);
-        sound2.play();
-    });
-    btn3.addEventListener("click", btn3clicked);
-    btn3.addEventListener("mouseover", function(event){
-        event.target.style.color = "purple";
-        setTimeout(function() {
-            event.target.style.color = "";
-        }, 500);
-        sound2.play();
-    });
-    */
     //var orbitControls = new THREE.OrbitControls(camera);
     //orbitControls.autoRotate = true;
     render();
@@ -472,7 +480,6 @@ audioLoader.load( 'css/sounds/lukrembo.mp3', function( buffer ) {
       requestAnimationFrame(render);
     }
 
-
     function onWindowResize() {
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();
@@ -481,16 +488,22 @@ audioLoader.load( 'css/sounds/lukrembo.mp3', function( buffer ) {
 
     function updateCamera(ev) {
         //let div1 = document.getElementById("div1");
+        /*
         if ($('#ev1').visible()) {
             camera.position.set(-10,0,100);
+            sound.play();
         } else if ($('#ev2').visible()){
             camera.position.set(10,0,100);
+            sound.play();
         } else if ($('#ev3').visible()){
             camera.position.set(0,10,100);
+            sound.play();
         } else {
             camera.position.set(0,0,100);
         }
+        */
     }
+
     /*
     function btn1clicked(){
         sound.play();

@@ -77,8 +77,9 @@
             </div>
         </div>
     </nav>
-
-    <canvas id="viewport"></canvas>
+    <canvas id="viewport">
+       <!-- <div id="loader"></div>-->
+    </canvas>
     <audio id="audio" loop></audio>
     <section>
         <div class="container">
@@ -176,9 +177,15 @@
             </div>
         </div>
     </section>
-
+    
     <script src="js/three.js"></script>
-    <script src="js/tween.umd.js"></script> <!-- for transition w/ threejs-->
+    <script src="js/LoadingManager.js"></script>
+    <script src="js/tween.umd.js"></script> 
+    <!--
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r68/three.min.js"></script>
+    <script src="https://rawcdn.githack.com/mrdoob/three.js/r68/examples/js/controls/TrackballControls.js"></script>
+    <script src="https://cdn.rawgit.com/sole/tween.js/master/src/Tween.js"></script>
+    -->
     <script src="js/OrbitControls.js"></script>
     <script src="js/AudioListener.js"></script>
     <script src="js/PointerLockControls.js"></script>
@@ -195,34 +202,65 @@
     <script>
         AOS.init();
     </script>
+    
+    
+    
 <script>
 //some helper functions here
 function fractionate(val, minVal, maxVal) {
     return (val - minVal)/(maxVal - minVal);
 }
-
 function modulate(val, minVal, maxVal, outMin, outMax) {
     var fr = fractionate(val, minVal, maxVal);
     var delta = outMax - outMin;
     return outMin + (fr * delta);
 }
-
 function avg(arr){
     var total = arr.reduce(function(sum, b) { return sum + b; });
     return (total / arr.length);
 }
-
 function max(arr){
     return arr.reduce(function(a, b){ return Math.max(a, b); })
 }
-
-
 //initialise simplex noise instance
 var noise = new SimplexNoise();
-
 // the main visualiser function
 var vizInit = function (){
-  AOS.init();
+    /*
+    var manager = new THREE.LoadingManager();
+manager.onStart = function ( url, itemsLoaded, itemsTotal ) {
+
+	console.log( 'Started loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.' );
+
+};
+
+manager.onLoad = function ( ) {
+
+	console.log( 'Loading complete!');
+
+};
+
+
+manager.onProgress = function ( url, itemsLoaded, itemsTotal ) {
+
+	console.log( 'Loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.' );
+
+};
+
+manager.onError = function ( url ) {
+
+	console.log( 'There was an error loading ' + url );
+
+};
+*/
+/*
+var loader = new THREE.OBJLoader( manager );
+loader.load( 'file.obj', function ( object ) {
+
+	//
+
+} );
+*/
   //var file = document.getElementById("thefile");
   var audio = document.getElementById("audio");
   var fileLabel = document.querySelector("label.file");
@@ -230,9 +268,9 @@ var vizInit = function (){
   //audio.classList.add('active');
 
   var files = this.files;
-  //audio.src = "css/sounds/lukrembo.mp3";
+  audio.src = "css/sounds/lukrembo.mp3";
   audio.load();
-  //audio.play();
+  audio.play();
   play();
   
 function play() {
@@ -278,7 +316,7 @@ function play() {
        
        var listener = new THREE.AudioListener();
       camera.add( listener );
-
+/*
 // create a global audio source
 var sound = new THREE.Audio( listener );
 
@@ -290,8 +328,10 @@ audioLoader.load( 'css/sounds/lukrembo.mp3', function( buffer ) {
 	sound.setVolume( 0.5 );
 	sound.play();
 });
+*/
 
     var renderer = new THREE.WebGLRenderer({ alpha: true,   antialias: true, canvas: document.getElementById("viewport") });
+    renderer.setPixelRatio( window.devicePixelRatio );
     renderer.setSize(window.innerWidth, window.innerHeight);
     var planeGeometry = new THREE.PlaneGeometry(800, 800, 20, 20);
     //down texture 
@@ -404,8 +444,9 @@ audioLoader.load( 'css/sounds/lukrembo.mp3', function( buffer ) {
         for (let i = 0; i < 6; i++)
             materialArray[i].side = THREE.BackSide;
         let skyboxGeo = new THREE.BoxGeometry(500, 500, 500);
+        skyboxGeo.translate(1000,1000,1000);
         let skybox = new THREE.Mesh(skyboxGeo, materialArray);
-        //group.add(skybox); 
+        group.add(skybox); 
         scene.add(group);
           
     //document.getElementById('out').appendChild(renderer.domElement);
@@ -442,7 +483,7 @@ audioLoader.load( 'css/sounds/lukrembo.mp3', function( buffer ) {
             camera.position.set(10,0,100);
             sound.play();
         } else if (element_in_view3){
-            camera.position.set(0,10,100);
+            camera.position.set(1000,1200,1250);
             sound.play();
         } else {
             //camera.position.set(10,0,100);
@@ -478,6 +519,9 @@ audioLoader.load( 'css/sounds/lukrembo.mp3', function( buffer ) {
       group.rotation.y += 0.005;
       renderer.render(scene, camera);
       requestAnimationFrame(render);
+    }
+    function onTransitionEnd( event ) {
+        event.target.remove();
     }
 
     function onWindowResize() {
@@ -563,7 +607,7 @@ window.onload = vizInit();
 document.body.addEventListener('touchend', function(ev) { context.resume(); });
 
 </script>
-    
+
 
 
 </body>

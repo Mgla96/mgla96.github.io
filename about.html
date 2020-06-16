@@ -117,7 +117,7 @@
                             <h1 id="ev1">Interests</h1>
                             <p>
                                 Hi there, my name is Matt. I recently graduated from University of California, Santa Barbara in June 2020 and received a B.S in Computer Science. I love exploring new technology and witnessing the merge between science
-                                fiction and reality. This is what has intrigued my interest in exploring areas such as 3D-printing, quadcopters, decentralized applications, and machine learning. I am very fortunate to enter a field that I feel so passionate about and am eager
+                                fiction and reality. This is what has intrigued my interest in exploring areas such as machine learning, decentralized applications, 3d-printing, and quadcopters. I am very fortunate to enter a field that I feel so passionate about and am eager
                                 to continue developing my skills and gaining experience within the world of software.
                             </p>
                         </div>
@@ -256,16 +256,12 @@ loader.load( 'file.obj', function ( object ) {
 
 } );
 */
-  //var file = document.getElementById("thefile");
   var audio = document.getElementById("audio");
   var fileLabel = document.querySelector("label.file");
-  //fileLabel.classList.add('normal');
-  //audio.classList.add('active');
-
   var files = this.files;
-  audio.src = "css/sounds/lukrembo.mp3";
+  //audio.src = "css/sounds/lukrembo.mp3";
   audio.load();
-  audio.play();
+  //audio.play();
   play();
   
 function play() {
@@ -284,8 +280,6 @@ function play() {
     camera.position.set(0,0,100);
     camera.position.z = 100 + window.scrollY;
     camera.lookAt(0, 0, 100);
-
-    //camera.lookAt(scene.position);
     scene.add(camera);
 
     var listener = new THREE.AudioListener();
@@ -309,8 +303,8 @@ function play() {
 
        // create an AudioListener and add it to the camera
        
-       var listener = new THREE.AudioListener();
-      camera.add( listener );
+        //var listener = new THREE.AudioListener();
+      //camera.add( listener );
 /*
 // create a global audio source
 var sound = new THREE.Audio( listener );
@@ -398,9 +392,17 @@ audioLoader.load( 'css/sounds/lukrembo.mp3', function( buffer ) {
     
     //var ball = new THREE.Mesh(icosahedronGeometry, lambertMaterial);
     var ball = new THREE.Mesh(icosahedronGeometry, material);
-
-    ball.position.set(0, 0, 0);
+    ball.position.set(0, 0, -2000);
     group.add(ball);
+    
+    var ball2 = new THREE.Mesh(icosahedronGeometry, material);
+    ball2.position.set(0, 0, 0);
+    group.add(ball2);
+
+    var ball3 = new THREE.Mesh(icosahedronGeometry, material);
+    ball3.position.set(0, 0, 200);
+    group.add(ball3);
+    
 
     var ambientLight = new THREE.AmbientLight(0xaaaaaa);
     scene.add(ambientLight);
@@ -472,13 +474,13 @@ audioLoader.load( 'css/sounds/lukrembo.mp3', function( buffer ) {
         var has_reached_bottom_of_page2 = max_scroll_height <= y_scroll_pos && !element_in_view2;
         
         if (element_in_view) {
-            camera.position.set(-10,0,100);
+            camera.position.set(-20,0,100);
             sound.play();
         } else if (element_in_view2){
-            camera.position.set(10,0,100);
+            camera.position.set(20,0,100);
             sound.play();
         } else if (element_in_view3){
-            camera.position.set(1000,1200,1250);
+            camera.position.set(-20,0,100);
             sound.play();
         } else {
             //camera.position.set(10,0,100);
@@ -511,7 +513,7 @@ audioLoader.load( 'css/sounds/lukrembo.mp3', function( buffer ) {
       
       makeRoughBall(ball, modulate(Math.pow(lowerMaxFr, 0.8), 0, 1, 0, 8), modulate(upperAvgFr, 0, 1, 0, 4));
 
-      group.rotation.y += 0.005;
+      //group.rotation.y += 0.005;
       renderer.render(scene, camera);
       requestAnimationFrame(render);
     }

@@ -53,7 +53,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">
+                        <a class="nav-link" href="about.html">
                             <ion-icon style="margin-right: 5px" name="person"></ion-icon>About
                         </a>
                     </li>
@@ -87,9 +87,15 @@
                             <div data-aos="zoom-in" data-aos-duration="2000" data-aos-easing="ease-in-out">
                                 <h1 class="page-title">Hi! Welcome to my portfolio</h1>
                             </div>
+                            <!--
                             <div data-aos="fade-up" data-aos-duration="2500" data-aos-easing="ease-in-out">
                                 <h4 class="lead page-title">This website is still under construction</h4>
                             </div>
+                            -->
+                            <div data-aos="fade-up" data-aos-duration="2500" data-aos-easing="ease-in-out">
+                                <h4 class="lead page-title">This website was created to showcase my projects and experience</h4>
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -322,7 +328,7 @@
                                     <div class="image">
                                         <figure
                                             class="mbr-figure mbr-figure--adapted mbr-figure--caption-inside-bottom mbr-figure--full-width">
-                                            <img src="css/images/cowtemp.png" class="mbr-figure__img rounded img-fluid"
+                                            <img src="css/images/HappyCow.png" class="mbr-figure__img rounded img-fluid"
                                                 alt="Card 2" title="Card 2">
                                         </figure>
                                     </div>
@@ -336,19 +342,30 @@
                                     </button>
                                     <div class="collapse" id="collapse7">
                                         <div class="card card-body">
-                                            <p style="text-align: left;">Implemented a multiplayer simulation game for Professor de Vries
-                                                which
-                                                demonstrates the detrimental effects of unregulated human use of
-                                                shared
-                                                finite resources. This game is used in his CHEM 123 classes at
-                                                UC Santa
-                                                Barbara as an interactive learning tool for his students.</p>
+                                            <p style="text-align: left;">
+                                                This web application is a multiplayer simulation game I developed for Professor de Vries which demonstrates the detrimental effects of 
+                                                unregulated human use of shared finite resources. This game is used in his CHEM 123 classes at UC Santa Barbara as an interactive learning tool for his students.
+                                                </br>
+                                                </br>
+                                                I really enjoyed working on this project because it allowed me to gain experience in the complete development cycle of a node.js web application in the front-end and back-end. In this project
+                                                I began by making ER-diagrams of how the MySQL database would be structured as well as prototypes of how I wanted the user and admin experience to look like. From there, I began developing the Node.js application using Express.js
+                                                which gave me more experience with routing and handling asynchronous database calls. Embedded Javascript was used for the Front-End which allowed for easier integration with the Express routing and middleware.
+                                                </br> 
+                                                </br>
+                                                After completing the application, I got to work with the Chemistry Server department in placing this web application on their servers. In doing so, I learned about process managers such as PM2 and Forever that allow the application to continue running on the specified port. 
+                                                The application was uploaded through SFTP and Apache was used to set up a reverse proxy so that the URL to the application on the Chemistry servers is accesible to the world, not just the UCSB network. 
+                                                </br>
+                                                </br>
+                                                The game requires a username and password to login but if you would like to learn more about this project and see what the User and Admin experience looks like in the application please see the github repository below.
+                                            </p>
                                             <p class="date">Jan 2020 - Apr 2020</p>
                                         </div>
+                                        <div class="mb-2">
                                         <button onclick="window.location.href = 'https://github.com/Mgla96/HappyCows'"
                                             type="button" class="btn btn-outline-dark ">
                                             View on <i class="fab fa-github"></i>
                                         </button>
+                                        </div>
                                         <button onclick="window.location.href = 'https://chem123.chem.ucsb.edu/'" type="button"
                                         class="btn btn-outline-dark ">
                                         chem123.chem.ucsb.edu</i>
@@ -675,58 +692,6 @@
             $(this).addClass("active");
         });
     </script>
-
-    <!--
-    <script>
-    $(function() {
-        var selectedClass = "";
-        $(".filter").click(function(){
-            selectedClass = $(this).attr("data-rel");
-            $("#gallery").fadeTo(100, 0.1);
-            $("#gallery div").not("."+selectedClass).fadeOut().removeClass('animation');
-            setTimeout(function() {
-                $("."+selectedClass).fadeIn().addClass('animation');
-                $("#gallery").fadeTo(300, 1);
-            }, 300);
-        });
-    }); 
-    </script>
-    -->
-    <!--
-    <script>
-        var textWrapper = document.querySelector('.ml11 .letters');
-textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
-
-anime.timeline({loop: true})
-  .add({
-    targets: '.ml11 .line',
-    scaleY: [0,1],
-    opacity: [0.5,1],
-    easing: "easeOutExpo",
-    duration: 700
-  })
-  .add({
-    targets: '.ml11 .line',
-    translateX: [0, document.querySelector('.ml11 .letters').getBoundingClientRect().width + 10],
-    easing: "easeOutExpo",
-    duration: 700,
-    delay: 100
-  }).add({
-    targets: '.ml11 .letter',
-    opacity: [0,1],
-    easing: "easeOutExpo",
-    duration: 600,
-    offset: '-=775',
-    delay: (el, i) => 34 * (i+1)
-  }).add({
-    targets: '.ml11',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000
-  });
-    </script>
-    -->
 </body>
 
 </html>

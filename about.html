@@ -93,6 +93,12 @@
                             <h4 class="lead page-title">This page is still under construction </h4>
                         </div>
                         <!--
+                            <div data-aos="fade-up" data-aos-duration="2500" data-aos-easing="ease-in-out">
+                            <h4 class="lead page-title">This page is still under construction </h4>
+                        </div>
+
+                        -->
+                        <!--
                         <div class="container">
                             <div class="row">
                                 <div class="col text-center">
@@ -103,6 +109,7 @@
                             </div>
                         </div>
                         -->
+                        
                     </div>
                 </div>
             </div>
@@ -197,11 +204,9 @@
     <script>
         AOS.init();
     </script>
-    
-    
+
     
 <script>
-//some helper functions here
 function fractionate(val, minVal, maxVal) {
     return (val - minVal)/(maxVal - minVal);
 }
@@ -221,47 +226,10 @@ function max(arr){
 var noise = new SimplexNoise();
 // the main visualiser function
 var vizInit = function (){
-    /*
-    var manager = new THREE.LoadingManager();
-manager.onStart = function ( url, itemsLoaded, itemsTotal ) {
-
-	console.log( 'Started loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.' );
-
-};
-
-manager.onLoad = function ( ) {
-
-	console.log( 'Loading complete!');
-
-};
-
-
-manager.onProgress = function ( url, itemsLoaded, itemsTotal ) {
-
-	console.log( 'Loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.' );
-
-};
-
-manager.onError = function ( url ) {
-
-	console.log( 'There was an error loading ' + url );
-
-};
-*/
-/*
-var loader = new THREE.OBJLoader( manager );
-loader.load( 'file.obj', function ( object ) {
-
-	//
-
-} );
-*/
   var audio = document.getElementById("audio");
   var fileLabel = document.querySelector("label.file");
   var files = this.files;
-  //audio.src = "css/sounds/lukrembo.mp3";
   audio.load();
-  //audio.play();
   play();
   
 function play() {
@@ -273,7 +241,6 @@ function play() {
     analyser.fftSize = 512;
     var bufferLength = analyser.frequencyBinCount;
     var dataArray = new Uint8Array(bufferLength);
-    //here comes the webgl
     var scene = new THREE.Scene();
     var group = new THREE.Group();
     var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -300,52 +267,12 @@ function play() {
         sound2.setVolume( 1 );
     });
 
-
-       // create an AudioListener and add it to the camera
-       
-        //var listener = new THREE.AudioListener();
-      //camera.add( listener );
-/*
-// create a global audio source
-var sound = new THREE.Audio( listener );
-
-// load a sound and set it as the Audio object's buffer
-var audioLoader = new THREE.AudioLoader();
-audioLoader.load( 'css/sounds/lukrembo.mp3', function( buffer ) {
-	sound.setBuffer( buffer );
-	sound.setLoop( true );
-	sound.setVolume( 0.5 );
-	sound.play();
-});
-*/
-
     var renderer = new THREE.WebGLRenderer({ alpha: true,   antialias: true, canvas: document.getElementById("viewport") });
     renderer.setPixelRatio( window.devicePixelRatio );
     renderer.setSize(window.innerWidth, window.innerHeight);
     var planeGeometry = new THREE.PlaneGeometry(800, 800, 20, 20);
-    //down texture 
-    //texture = THREE.ImageUtils.loadTexture( "css/images/skybox2/blizzard_dn.jpg" );
-    // assuming you want the texture to repeat in both directions:
-    //texture.wrapS = THREE.RepeatWrapping; 
-    //texture.wrapT = THREE.RepeatWrapping;
-    //up texture
-    // texture2 = THREE.ImageUtils.loadTexture( "css/images/skybox2/kenon_star_up.jpg" );
-    //texture2.wrapS = THREE.RepeatWrapping; 
-    //texture2.wrapT = THREE.RepeatWrapping;
-    // how many times to repeat in each direction; the default is (1,1),
-    //   which is probably why your example wasn't working
-    //texture.repeat.set( 4, 4 ); 
-    // texture2.repeat.set( 4, 4 ); 
-    /*
-    var planeMaterial = new THREE.MeshLambertMaterial({
-         map : texture2,
-         side: THREE.DoubleSide }
-    );
-    var planeMaterial2 = new THREE.MeshLambertMaterial({
-         map : texture,
-         side: THREE.DoubleSide }
-    );
-    */
+    
+
     var planeMaterial = new THREE.MeshLambertMaterial({
         color: 0x6904ce,
         side: THREE.DoubleSide,
@@ -356,6 +283,7 @@ audioLoader.load( 'css/sounds/lukrembo.mp3', function( buffer ) {
         side: THREE.DoubleSide,
         wireframe: true
     });
+    
     var plane = new THREE.Mesh(planeGeometry, planeMaterial);
     plane.rotation.x = -0.5 * Math.PI;
     plane.position.set(0, 30, 0);
@@ -366,42 +294,38 @@ audioLoader.load( 'css/sounds/lukrembo.mp3', function( buffer ) {
     plane2.position.set(0, -30, 0);
     group.add(plane2);
 
-    var icosahedronGeometry = new THREE.IcosahedronGeometry(10, 4);
+    var icosahedronGeometry = new THREE.IcosahedronGeometry(15, 1);
     var lambertMaterial = new THREE.MeshLambertMaterial({
         color: 0xff00ee,
         wireframe: true
     });
-
     var material  = new THREE.MeshPhongMaterial()
-    material.canvasCloud    = THREE.ImageUtils.loadTexture('css/images/earthcloudmap.jpg')
-    material.map    = THREE.ImageUtils.loadTexture('css/images/earthmap1k.jpg')
-    material.bumpMap    = THREE.ImageUtils.loadTexture('css/images/earthbump1k.jpg');
-    //material.bumpScale = 0.05;
-    material.specularMap    = THREE.ImageUtils.loadTexture('css/images/earthspec1k.jpg');
-    material.specular  = new THREE.Color('grey');
-    material.depthWrite = false;
-
     /*
-    onRenderFcts.push(function(delta, now){
-        earthMesh.rotation.y  += 1/32 * delta
-    })
-    onRenderFcts.push(function(delta, now){
-        cloudMesh.rotation.y  += 1/16 * delta
-    })
+    var loader = new GLTFLoader()
+    loader.load(
+        //resource URL
+        'css/models/gltf/adamHead/adamHead.gltf',
+        function(gltf){
+            scene.add(gltf.scene);
+            gltf.animations;
+            gltf.scene;
+            gltf.scenes;
+            gltf.cameras;
+            gltf.asset;
+        },
+        function(xhr){
+            console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
+        },
+        function ( error ) {
+            console.log( 'An error happened' );
+        }
+    );
+    //var ball = new THREE.Mesh(icosahedronGeometry, material);
     */
-    
-    //var ball = new THREE.Mesh(icosahedronGeometry, lambertMaterial);
-    var ball = new THREE.Mesh(icosahedronGeometry, material);
-    ball.position.set(0, 0, -2000);
+    var ball = new THREE.Mesh(icosahedronGeometry, lambertMaterial);
+   
+    ball.position.set(0, 0, 0);
     group.add(ball);
-    
-    var ball2 = new THREE.Mesh(icosahedronGeometry, material);
-    ball2.position.set(0, 0, 0);
-    group.add(ball2);
-
-    var ball3 = new THREE.Mesh(icosahedronGeometry, material);
-    ball3.position.set(0, 0, 200);
-    group.add(ball3);
     
 
     var ambientLight = new THREE.AmbientLight(0xaaaaaa);
@@ -415,16 +339,8 @@ audioLoader.load( 'css/sounds/lukrembo.mp3', function( buffer ) {
     scene.add(spotLight);
 
     //skybox
-    let materialArray = [];
-
     /*
-        let texture_ft = new THREE.TextureLoader().load('css/images/skybox2/kenon_star_ft.jpg');
-        let texture_bk = new THREE.TextureLoader().load('css/images/skybox2/kenon_star_bk.jpg');
-        let texture_up = new THREE.TextureLoader().load('css/images/skybox2/kenon_star_up.jpg');
-        let texture_dn = new THREE.TextureLoader().load('css/images/skybox2/kenon_star_dn.jpg');
-        let texture_rt = new THREE.TextureLoader().load('css/images/skybox2/kenon_star_rt.jpg');
-        let texture_lf = new THREE.TextureLoader().load('css/images/skybox2/kenon_star_lf.jpg');
-*/
+    let materialArray = [];
         let texture_ft = new THREE.TextureLoader().load('css/images/skybox2/divine_ft.jpg');
         let texture_bk = new THREE.TextureLoader().load('css/images/skybox2/divine_bk.jpg');
         let texture_up = new THREE.TextureLoader().load('css/images/skybox2/divine_up.jpg');
@@ -445,7 +361,7 @@ audioLoader.load( 'css/sounds/lukrembo.mp3', function( buffer ) {
         let skybox = new THREE.Mesh(skyboxGeo, materialArray);
         group.add(skybox); 
         scene.add(group);
-          
+    */
     //document.getElementById('out').appendChild(renderer.domElement);
     window.addEventListener('resize', onWindowResize, false);
     window.addEventListener("wheel", updateCamera, true);
@@ -475,15 +391,19 @@ audioLoader.load( 'css/sounds/lukrembo.mp3', function( buffer ) {
         
         if (element_in_view) {
             camera.position.set(-20,0,100);
+            ball.rotation.y += 0.005
             sound.play();
         } else if (element_in_view2){
             camera.position.set(20,0,100);
+            ball.rotation.y += 0.005
             sound.play();
         } else if (element_in_view3){
             camera.position.set(-20,0,100);
+            ball.rotation.y += 0.005
             sound.play();
         } else {
             //camera.position.set(10,0,100);
+            ball.rotation.y += 0.005
             camera.position.set(0,0,100);
         }
     });

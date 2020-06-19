@@ -295,7 +295,7 @@ div.item{
 }
 
 
-
+.aboutpadding { padding-top: 170px; }
 .page-caption { padding-top: 170px; padding-bottom: 174px; }
 .page-title { 
     line-height: 1; 
@@ -328,9 +328,45 @@ div.item{
         color: rgba(0, 0, 0, 0.87);
         width: 100%;
 }
+
+canvas {
+ display: block;
+}
+/*
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding: 0;
+  margin: 0;
+}
+*/
+/*
+#viewport {
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+*/
+
+/*
 canvas {
 	display: block;
 }
+
+#viewport {
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}*/
+
 .card-section { position: relative; bottom: 60px; }
 .card-block { padding: 2%; }
 

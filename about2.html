@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-162546155-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-162546155-1");
+    </script>
+    <meta charset="UTF-8" />
+    <title>Matt Gottlieb | About</title>
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"> -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="stylesheet" href="css/about.css" />
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <!-- Scroll Animations -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Saira"
+      rel="stylesheet"
+    />
+    <!-- Fonts-->
+    <link
+      href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"
+      rel="stylesheet"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no"
+    />
+  </head>
+
+  <body class="loading">
+    <!--navbar -->
+    <nav class="navbar navbar-trans navbar-dark fixed-top navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <!-- <img src="css/images/mattlogoblack.svg" width="150" height="auto" alt="">-->
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#home">
+                <ion-icon style="margin-right: 5px;" name="home"></ion-icon>Home
+              </a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#about">
+                <ion-icon style="margin-right: 5px;" name="person"></ion-icon
+                >About
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#projects">
+                <ion-icon style="margin-right: 5px;" name="hammer"></ion-icon
+                >Projects
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="resume.pdf">
+                <ion-icon style="margin-right: 5px;" name="document"></ion-icon
+                >Resume
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#contact">
+                <ion-icon style="margin-right: 5px;" name="mail"></ion-icon
+                >Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <canvas id="viewport">
+      <!-- <div id="loader"></div>-->
+    </canvas>
+    <audio id="audio" loop></audio>
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="page-caption">
+              <div
+                data-aos="zoom-in"
+                data-aos-duration="2000"
+                data-aos-easing="ease-in-out"
+              >
+                <h1 class="page-title">Learn More About Me</h1>
+              </div>
+              <div
+                data-aos="fade-up"
+                data-aos-duration="2500"
+                data-aos-easing="ease-in-out"
+              >
+                <h4 class="lead page-title">
+                  This page is still under construction
+                </h4>
+              </div>
+              <!--
+                        <div class="container">
+                            <div class="row">
+                                <div class="col text-center">
+                                    <button type="button" id="btn1" class="btn btn-default">1st</button>
+                                    <button type="button" id="btn2" class="btn btn-default">2nd</button>
+                                    <button type="button" id="btn3" class="btn btn-default">3rd</button>
+                                </div>
+                            </div>
+                        </div>
+                        -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+            <div data-aos="zoom-in" data-aos-duration="1000">
+              <div class="float-left page-caption">
+                <h1 id="ev1">Interests</h1>
+                <p>
+                  Hi there, my name is Matt. I recently graduated from
+                  University of California, Santa Barbara in June 2020 and
+                  received a B.S in Computer Science. I love exploring new
+                  technology and witnessing the merge between science fiction
+                  and reality. This is what has intrigued my interest in
+                  exploring areas such as machine learning, decentralized
+                  applications, 3d-printing, and quadcopters. I am very
+                  fortunate to enter a field that I feel so passionate about and
+                  am eager to continue developing my skills and gaining
+                  experience within the world of software.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-8 col-lg-8 col-md-6 col-sm-6"></div>
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+            <div data-aos="zoom-in" data-aos-duration="1000">
+              <div class="float-right page-caption">
+                <h1 id="ev2">Skills</h1>
+                <p>
+                  The languages I am most proficient in are C++, Python,
+                  Javascript, and Java. I have experience developing full-stack websites and web
+                  applications handling everything from the design process to the back-end infrastructure. The Simulation Game I built for the Chemistry department at UC Santa Barbara is an example of one of these web applications.
+                  </br></br>
+                  I also have experience with Python in developing Machine learning models without the assistance of libraries such as scikit-learn as well as creating scripts to automate workflow.
+                  Researchers in the Ocean Recoveries Lab at UC Santa Barbara needed to measure the growth of coral reefs through converting
+                  their photos taken in the field to correctly scaled 3d models. This process required over 10 steps for every model and researchers had to be on standby to do the next step after model rendering had completed. 
+                  I created two python scripts that automated this process for all models at once so only 1 manual step was required in total saving the researchers lots of valuable time.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+            <div data-aos="zoom-in" data-aos-duration="1000">
+              <div class="float-left page-caption">
+                <h1 id="ev3">Other</h1>
+                <p>
+                  I like to balance my passion for technology with a healthy
+                  amount of the outdoors and nature. I currently live in Santa
+                  Barbara, California which has a surplus of outdoor activities
+                  and beautiful scenery. I enjoy going on hikes and exploring
+                  the beauty of national parks whenever I can.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="js/three.js"></script>
+    <script src="js/LoadingManager.js"></script>
+    <script src="js/tween.umd.js"></script>
+    <script src="js/OrbitControls.js"></script>
+    <script src="js/AudioListener.js"></script>
+    <script src="js/PointerLockControls.js"></script>
+    <script src="js/GLTFLoader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplex-noise/2.3.0/simplex-noise.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/jquery.visible.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+
+    <script>
+      //some helper functions here
+      function fractionate(val, minVal, maxVal) {
+        return (val - minVal) / (maxVal - minVal);
+      }
+      function modulate(val, minVal, maxVal, outMin, outMax) {
+        var fr = fractionate(val, minVal, maxVal);
+        var delta = outMax - outMin;
+        return outMin + fr * delta;
+      }
+      function avg(arr) {
+        var total = arr.reduce(function (sum, b) {
+          return sum + b;
+        });
+        return total / arr.length;
+      }
+      function max(arr) {
+        return arr.reduce(function (a, b) {
+          return Math.max(a, b);
+        });
+      }
+      //initialise simplex noise instance
+      var noise = new SimplexNoise();
+      // the main visualiser function
+      var vizInit = function () {
+        //var file = document.getElementById("thefile");
+        var audio = document.getElementById("audio");
+        var fileLabel = document.querySelector("label.file");
+        var files = this.files;
+        /*
+        audio.src = "css/sounds/lukrembo.mp3";
+        audio.load();
+        audio.play();
+        */
+        play();
+
+        function play() {
+          var context = new AudioContext();
+          var src = context.createMediaElementSource(audio);
+          var analyser = context.createAnalyser();
+          src.connect(analyser);
+          analyser.connect(context.destination);
+          analyser.fftSize = 512;
+          var bufferLength = analyser.frequencyBinCount;
+          var dataArray = new Uint8Array(bufferLength);
+          //here comes the webgl
+          var scene = new THREE.Scene();
+          var group = new THREE.Group();
+          var camera = new THREE.PerspectiveCamera(
+            45,
+            window.innerWidth / window.innerHeight,
+            0.1,
+            1000
+          );
+          camera.position.set(0, 0, 100);
+          camera.position.z = 100 + window.scrollY;
+          camera.lookAt(0, 0, 100);
+
+          //camera.lookAt(scene.position);
+          scene.add(camera);
+
+          var listener = new THREE.AudioListener();
+          camera.add(listener);
+          var sound = new THREE.Audio(listener);
+          var audioLoader = new THREE.AudioLoader();
+          audioLoader.load("css/sounds/transition.m4a", function (buffer) {
+            sound.setBuffer(buffer);
+            sound.setVolume(0.5);
+          });
+
+          var listener2 = new THREE.AudioListener();
+          camera.add(listener2);
+          var sound2 = new THREE.Audio(listener2);
+          var audioLoader2 = new THREE.AudioLoader();
+          audioLoader2.load("css/sounds/transition2.m4a", function (buffer) {
+            sound2.setBuffer(buffer);
+            sound2.setVolume(1);
+          });
+          // create an AudioListener and add it to the camera
+          var listener = new THREE.AudioListener();
+          camera.add(listener);
+          var renderer = new THREE.WebGLRenderer({
+            alpha: true,
+            antialias: true,
+            canvas: document.getElementById("viewport"),
+          });
+          renderer.setPixelRatio(window.devicePixelRatio);
+          renderer.setSize(window.innerWidth, window.innerHeight);
+          var planeGeometry = new THREE.PlaneGeometry(800, 800, 20, 20);
+          var planeMaterial = new THREE.MeshLambertMaterial({
+            color: 0x6904ce,
+            side: THREE.DoubleSide,
+            wireframe: true,
+          });
+          var planeMaterial2 = new THREE.MeshLambertMaterial({
+            color: 0x6904ce,
+            side: THREE.DoubleSide,
+            wireframe: true,
+          });
+          var plane = new THREE.Mesh(planeGeometry, planeMaterial);
+          plane.rotation.x = -0.5 * Math.PI;
+          plane.position.set(0, 30, 0);
+          group.add(plane);
+
+          var plane2 = new THREE.Mesh(planeGeometry, planeMaterial2);
+          plane2.rotation.x = -0.5 * Math.PI;
+          plane2.position.set(0, -30, 0);
+          group.add(plane2);
+
+          var icosahedronGeometry = new THREE.IcosahedronGeometry(10, 4);
+          var lambertMaterial = new THREE.MeshLambertMaterial({
+            color: 0xff00ee,
+            wireframe: true,
+          });
+
+          var ball = new THREE.Mesh(icosahedronGeometry, lambertMaterial);
+
+          ball.position.set(0, 0, 0);
+          group.add(ball);
+
+          var ambientLight = new THREE.AmbientLight(0xaaaaaa);
+          scene.add(ambientLight);
+
+          var spotLight = new THREE.SpotLight(0xffffff);
+          spotLight.intensity = 0.9;
+          spotLight.position.set(-10, 40, 20);
+          spotLight.lookAt(ball);
+          spotLight.castShadow = true;
+          scene.add(spotLight);
+          //skybox
+          /*
+        let materialArray = [];
+        let texture_ft = new THREE.TextureLoader().load('css/images/skybox2/divine_ft.jpg');
+        let texture_bk = new THREE.TextureLoader().load('css/images/skybox2/divine_bk.jpg');
+        let texture_up = new THREE.TextureLoader().load('css/images/skybox2/divine_up.jpg');
+        let texture_dn = new THREE.TextureLoader().load('css/images/skybox2/divine_dn.jpg');
+        let texture_rt = new THREE.TextureLoader().load('css/images/skybox2/divine_rt.jpg');
+        let texture_lf = new THREE.TextureLoader().load('css/images/skybox2/divine_lf.jpg');
+        materialArray.push(new THREE.MeshBasicMaterial({ map: texture_ft }));
+        materialArray.push(new THREE.MeshBasicMaterial({ map: texture_bk }));
+        materialArray.push(new THREE.MeshBasicMaterial({ map: texture_up }));
+        materialArray.push(new THREE.MeshBasicMaterial({ map: texture_dn }));
+        materialArray.push(new THREE.MeshBasicMaterial({ map: texture_rt }));
+        materialArray.push(new THREE.MeshBasicMaterial({ map: texture_lf }));
+        for (let i = 0; i < 6; i++)
+            materialArray[i].side = THREE.BackSide;
+        let skyboxGeo = new THREE.BoxGeometry(500, 500, 500);
+        skyboxGeo.translate(0,0,0);
+        let skybox = new THREE.Mesh(skyboxGeo, materialArray);
+        group.add(skybox); 
+        */
+          scene.add(group);
+          window.addEventListener("resize", onWindowResize, false);
+          window.addEventListener("wheel", updateCamera, true);
+
+          var element_position = $("#ev1").offset().top;
+          var screen_height = $(window).height();
+          var activation_offset = 0.5; //determines how far up the the page the element needs to be before triggering the function
+          var activation_point =
+            element_position - screen_height * activation_offset;
+          var max_scroll_height = $("body").height() - screen_height - 5; //-5 for a little bit of buffer
+
+          var element_position2 = $("#ev2").offset().top;
+          var activation_point2 =
+            element_position2 - screen_height * activation_offset;
+
+          var element_position3 = $("#ev3").offset().top;
+          var activation_point3 =
+            element_position3 - screen_height * activation_offset;
+
+          render();
+
+          function render() {
+            analyser.getByteFrequencyData(dataArray);
+
+            var lowerHalfArray = dataArray.slice(0, dataArray.length / 2 - 1);
+            var upperHalfArray = dataArray.slice(
+              dataArray.length / 2 - 1,
+              dataArray.length - 1
+            );
+
+            var overallAvg = avg(dataArray);
+            var lowerMax = max(lowerHalfArray);
+            var lowerAvg = avg(lowerHalfArray);
+            var upperMax = max(upperHalfArray);
+            var upperAvg = avg(upperHalfArray);
+
+            var lowerMaxFr = lowerMax / lowerHalfArray.length;
+            var lowerAvgFr = lowerAvg / lowerHalfArray.length;
+            var upperMaxFr = upperMax / upperHalfArray.length;
+            var upperAvgFr = upperAvg / upperHalfArray.length;
+
+            makeRoughGround(plane, modulate(upperAvgFr, 0, 1, 0.5, 4));
+            makeRoughGround(plane2, modulate(lowerMaxFr, 0, 1, 0.5, 4));
+
+            makeRoughBall(
+              ball,
+              modulate(Math.pow(lowerMaxFr, 0.8), 0, 1, 0, 8),
+              modulate(upperAvgFr, 0, 1, 0, 4)
+            );
+
+            ball.rotation.y += 0.005;
+            renderer.render(scene, camera);
+            requestAnimationFrame(render);
+          }
+          function onTransitionEnd(event) {
+            event.target.remove();
+          }
+
+          function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+          }
+
+
+          function updateCamera(ev) {
+            //let div1 = document.getElementById("div1");
+            if ($("#ev1").visible()) {
+              camera.position.set(-10, 0, 100);
+              sound.play();
+            } else if ($("#ev2").visible()) {
+              camera.position.set(10, 0, 100);
+              sound.play();
+            } else if ($("#ev3").visible()) {
+              camera.position.set(0, 0, 100);
+              sound.play();
+            } else {
+              camera.position.set(0, 0, 100);
+            }
+          }
+
+          function makeRoughBall(mesh, bassFr, treFr) {
+            mesh.geometry.vertices.forEach(function (vertex, i) {
+              var offset = mesh.geometry.parameters.radius;
+              var amp = 7;
+              var time = window.performance.now();
+              vertex.normalize();
+              var rf = 0.00001;
+              var distance =
+                offset +
+                bassFr +
+                noise.noise3D(
+                  vertex.x + time * rf * 7,
+                  vertex.y + time * rf * 8,
+                  vertex.z + time * rf * 9
+                ) *
+                  amp *
+                  treFr;
+              vertex.multiplyScalar(distance);
+            });
+            mesh.geometry.verticesNeedUpdate = true;
+            mesh.geometry.normalsNeedUpdate = true;
+            mesh.geometry.computeVertexNormals();
+            mesh.geometry.computeFaceNormals();
+          }
+
+          function makeRoughGround(mesh, distortionFr) {
+            mesh.geometry.vertices.forEach(function (vertex, i) {
+              var amp = 2;
+              var time = Date.now();
+              var distance =
+                (noise.noise2D(
+                  vertex.x + time * 0.0003,
+                  vertex.y + time * 0.0001
+                ) +
+                  0) *
+                distortionFr *
+                amp;
+              vertex.z = distance;
+            });
+            mesh.geometry.verticesNeedUpdate = true;
+            mesh.geometry.normalsNeedUpdate = true;
+            mesh.geometry.computeVertexNormals();
+            mesh.geometry.computeFaceNormals();
+          }
+          audio.play();
+        }
+      };
+      window.onload = vizInit();
+      document.body.addEventListener("touchend", function (ev) {
+        context.resume();
+      });
+    </script>
+  </body>
+</html>
+
+<!--
+Scooter	#31bacf	Primary
+Charade	#2f323f	Info
+Ocean Green	c	Success
+Roti	#c1a23e	Warning
+Pomegranate	#f44336	Danger
+$primary: #31bacf; 
+$info: #2f323f;
+$success: #2f323f; 
+$warning: #c1a23e;
+$danger: #f44336;
+-->

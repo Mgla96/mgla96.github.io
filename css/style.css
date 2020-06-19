@@ -328,6 +328,9 @@ div.item{
         color: rgba(0, 0, 0, 0.87);
         width: 100%;
 }
+canvas {
+	display: block;
+}
 .card-section { position: relative; bottom: 60px; }
 .card-block { padding: 2%; }
 
@@ -377,6 +380,12 @@ iframe[seamless] {
     padding-top: 0.1em;
     padding-right: 0.05em;
     padding-bottom: 0.15em;
+  }
+  .row-eq-height {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
   }
   
   .ml11 .line {

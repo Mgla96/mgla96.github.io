@@ -20,7 +20,6 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#000000">
-
     <link rel="stylesheet" href="css/style.css">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -269,7 +268,7 @@
                                             <p style="text-align: left;">This program is a basic linear classifier for 3 classes. This model is trained by computing the centroid of each class (e.g. A,B, and C) then constructs a discriminant function between each pair of classes
                                                 (e.g A/B, B/C, and A/C), halfway between the two centroids and orthogonal to the line connecting the two centroids. For testing it checks the discriminant function between "A or B" and then depending on that answer, decides "A or C" or "B or C". 
                                             </p>
-                                            <p class="date">Jan 2020 - Apr 2020</p>
+                                            <p class="date">Apr 2020</p>
                                         </div>
                                         <button onclick="window.location.href = 'https://github.com/Mgla96/3ClassLinearClassifier'"
                                             type="button" class="btn btn-outline-dark ">
@@ -641,9 +640,6 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
@@ -660,21 +656,21 @@
                     {
                         breakpoint: 768,
                         options: {
-                            maxParticles: 220,
+                            maxParticles: 200,
                             color: '#ffdf00',
                             connectParticles: false
                         }
                     }, {
                         breakpoint: 425,
                         options: {
-                            maxParticles: 130,
+                            maxParticles: 120,
                             connectParticles: false,
                             color: '#ffdf00'
                         }
                     }, {
                         breakpoint: 320,
                         options: {
-                            maxParticles: 60,
+                            maxParticles: 35,
                             connectParticles: false,
                             color: '#ffdf00'
                         }
@@ -698,18 +694,8 @@
 
 </html>
 
-
-<!--
-Scooter	#31bacf	Primary
-Charade	#2f323f	Info
-Ocean Green	c	Success
-Roti	#c1a23e	Warning
-Pomegranate	#f44336	Danger
-
-
-$primary: #31bacf; 
-$info: #2f323f;
-$success: #2f323f; 
-$warning: #c1a23e;
-$danger: #f44336;
--->
+    <!--extra
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    -->

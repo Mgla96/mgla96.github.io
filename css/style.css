@@ -24,9 +24,6 @@ body{
 	  -moz-osx-font-smoothing: grayscale;
 }
 
-
-
-
 h1,
 h2,
 h3,
@@ -70,40 +67,6 @@ p.ex1 {
 .embed-responsive-210by297 {
   padding-bottom: 141.42%;
   }
-/*
-#pdf_content {
-  height : auto;
-  width : 100%;
-}*/
-
-/*
-@media (min-width: 768px) {
-  .container-small {
-      width: 300px;
-  }
-  .container-large {
-      width: 970px;
-  } 
-} 
-*/
-/*
-@media (min-width: 992px) {
-  .container-small {
-      width: 500px;
-  }
-  .container-large {
-      width: 1170px;
-  } 
-} 
-@media (min-width: 1200px) {
-  .container-small {
-      width: 700px;
-  }
-  .container-large {
-      width: 1500px;
-  } 
-}
-*/
 
 .container-small, .container-large {
   max-width: 100%;
@@ -205,10 +168,6 @@ p {
   text-decoration: none;
 }
 
-
-
-
-
 .background {
     position: absolute;
     display: block;
@@ -272,13 +231,6 @@ div.item{
     background-repeat: no-repeat;
     background-size: cover;
 }
-/*
-@media only screen and (max-width:749px) {
-  .header-photo {
-    background-attachment: inherit;
-  }
-}
-*/
 
 @media only screen and (max-width:767px) {
   .header-photo {
@@ -293,7 +245,6 @@ div.item{
     padding: 0px
   }
 }
-
 
 .aboutpadding { padding-top: 10.525rem; }
 .page-caption { padding-top: 170px; padding-bottom: 174px; }
@@ -332,40 +283,6 @@ div.item{
 canvas {
  display: block;
 }
-/*
-body {
-  overflow-x: hidden;
-  overflow-y: scroll;
-  padding: 0;
-  margin: 0;
-}
-*/
-/*
-#viewport {
-  position: fixed;
-  margin: 0;
-  padding: 0;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-}
-*/
-
-/*
-canvas {
-	display: block;
-}
-
-#viewport {
-  position: fixed;
-  margin: 0;
-  padding: 0;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-}*/
 
 .card-section { position: relative; bottom: 60px; }
 .card-block { padding: 2%; }
@@ -461,10 +378,3 @@ iframe[seamless] {
     width: 100%;
     object-fit: cover;
   }
-
-/* 4x3 Aspect Ratio */
-/*
-.iframe-container-4x3 {
-  padding-top: 75%;
-}
-*/

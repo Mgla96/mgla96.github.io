@@ -20,7 +20,7 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#000000">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/stylecomp.css">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -81,23 +81,24 @@
 
 
     <div class="header-photo main" id="home">
-            <canvas class="background"></canvas>
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                        <div class="page-caption">
-                            <div data-aos="zoom-in" data-aos-duration="1000" data-aos-easing="ease-in-out">
-                                <h1 class="page-title">Hi! Welcome to my portfolio</h1>
-                            </div>
-                            <div data-aos="fade-up" data-aos-duration="1500" data-aos-easing="ease-in-out">
-                                <h4 class="lead page-title">This website was created to showcase my projects and experience</h4>
-                            </div>
-                            
+        <canvas class="background"></canvas>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="page-caption">
+                        <div data-aos="zoom-in" data-aos-duration="1000" data-aos-easing="ease-in-out">
+                            <h1 class="page-title">Hi! Welcome to my portfolio</h1>
                         </div>
+                        <div data-aos="fade-up" data-aos-duration="1500" data-aos-easing="ease-in-out">
+                            <h4 class="lead page-title">This website was created to showcase my projects and experience
+                            </h4>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     <div>
         <div class="container card-section bg-white main-raiser">
             <div class="card-block mb30" id="projects">
@@ -114,7 +115,8 @@
                                         <figure
                                             class="mbr-figure mbr-figure--adapted mbr-figure--caption-inside-bottom mbr-figure--full-width ">
                                             <img src="css/images/rock-n-roll.jpg"
-                                                class="mbr-figure__img rounded img-fluid" alt="Card 1" title="Gomoku AI">
+                                                class="mbr-figure__img rounded img-fluid" alt="Card 1"
+                                                title="Gomoku AI">
                                         </figure>
                                     </div>
                                     <h3 class="styled">Gomoku AI</h3>
@@ -127,11 +129,15 @@
                                     </button>
                                     <div class="collapse" id="collapse1">
                                         <div class="card card-body">
-                                            <p style="text-align: left;">Created an AI to play Gomoku, otherwise known as Five in a Row. Gomoku is like tic-tac-toe except with larger game boards and the requirement of 5 of the same type of stone(a player's game piece) in a row to win. This AI uses the Minimax algorithm with Alpha-Beta Pruning and an optimized method of searching in order to determine the best move relatively quickly.  </p>
+                                            <p style="text-align: left;">Created an AI to play Gomoku, otherwise known
+                                                as Five in a Row. Gomoku is like tic-tac-toe except with larger game
+                                                boards and the requirement of 5 of the same type of stone(a player's
+                                                game piece) in a row to win. This AI uses the Minimax algorithm with
+                                                Alpha-Beta Pruning and an optimized method of searching in order to
+                                                determine the best move relatively quickly. </p>
                                             <p class="date">Jun 2020</p>
                                         </div>
-                                        <button
-                                            onclick="window.location.href = 'https://github.com/Mgla96/GomokuAI'"
+                                        <button onclick="window.location.href = 'https://github.com/Mgla96/GomokuAI'"
                                             type="button" class="btn btn-outline-dark ">
                                             View on <i class="fab fa-github"></i>
                                         </button>
@@ -145,7 +151,8 @@
                                         <figure
                                             class="mbr-figure mbr-figure--adapted mbr-figure--caption-inside-bottom mbr-figure--full-width ">
                                             <img src="css/images/joel-staveley.jpg"
-                                                class="mbr-figure__img rounded img-fluid" alt="Card 2" title="Diabetic Retinopothy Predictor">
+                                                class="mbr-figure__img rounded img-fluid" alt="Card 2"
+                                                title="Diabetic Retinopothy Predictor">
                                         </figure>
                                     </div>
                                     <h3 class="styled">Diabetic Retinopothy</h3>
@@ -158,24 +165,34 @@
                                     </button>
                                     <div class="collapse" id="collapse2">
                                         <div class="card card-body">
-                                            <p style="text-align: left;">This program predicts whether a patient has a medical condition known as Diabetic Retinopathy based on both categorical(integer) and continuous(float) features. 
+                                            <p style="text-align: left;">This program predicts whether a patient has a
+                                                medical condition known as Diabetic Retinopathy based on both
+                                                categorical(integer) and continuous(float) features.
                                                 These are the 18 features used below: </br></br>
-                                                0) The binary result of quality assessment. 0 = bad quality 1 = sufficient quality.</br></br>
-                                                1) The binary result of pre-screening, where 1 indicates severe retinal abnormality and 0 its lack.</br></br>
+                                                0) The binary result of quality assessment. 0 = bad quality 1 =
+                                                sufficient quality.</br></br>
+                                                1) The binary result of pre-screening, where 1 indicates severe retinal
+                                                abnormality and 0 its lack.</br></br>
                                                 2-7) The results of MA detection. Each feature value stand for the
-                                                number of MAs found at the confidence levels alpha = 0.5, . . . , 1, respectively.</br></br>
+                                                number of MAs found at the confidence levels alpha = 0.5, . . . , 1,
+                                                respectively.</br></br>
                                                 8-15) contain the same information as 2-7) for exudates. However,
                                                 as exudates are represented by a set of points rather than the number of
-                                                pixels constructing the lesions, these features are normalized by dividing the
-                                                number of lesions with the diameter of the ROI to compensate different image
+                                                pixels constructing the lesions, these features are normalized by
+                                                dividing the
+                                                number of lesions with the diameter of the ROI to compensate different
+                                                image
                                                 sizes.</br></br>
                                                 16) The euclidean distance of the center of
-                                                the macula and the center of the optic disc to provide important information
+                                                the macula and the center of the optic disc to provide important
+                                                information
                                                 regarding the patient's condition. This feature
                                                 is also normalized with the diameter of the ROI.</br></br>
                                                 17) The diameter of the optic disc.</br></br>
                                                 18) The binary result of the AM/FM-based classification.</br></br>
-                                                I implemented a decision tree machine learning model for this data with random forests to increase accuracy and threshold splits to prevent overfitting.</p>
+                                                I implemented a decision tree machine learning model for this data with
+                                                random forests to increase accuracy and threshold splits to prevent
+                                                overfitting.</p>
                                             <p class="date">May 2020</p>
                                         </div>
                                         <button
@@ -192,8 +209,9 @@
                                     <div class="image">
                                         <figure
                                             class="mbr-figure mbr-figure--adapted mbr-figure--caption-inside-bottom mbr-figure--full-width">
-                                            <img src="css/images/silhouette.jpg" class="mbr-figure__img rounded img-fluid"
-                                                alt="Card 3" title="Author Predictor">
+                                            <img src="css/images/silhouette.jpg"
+                                                class="mbr-figure__img rounded img-fluid" alt="Card 3"
+                                                title="Author Predictor">
                                         </figure>
                                     </div>
                                     <h3 class="">Author Predictor</h3>
@@ -206,12 +224,24 @@
                                     </button>
                                     <div class="collapse" id="collapse3">
                                         <div class="card card-body">
-                                            <p style="text-align: left;">After training this program with a dataset of articles written by different authors it can predict which of these authors has written an anonymous articles. This program utilizes Multinomial Naive Bayes Multi Classisification with a bag-of-words representation of the text.</br></br>
-                                                I implemented bigrams and trigrams as well as used the nltk library to incorporate lemmetization as methods to improve my accuracy.
-                                                The accuracy could be further improved by implementing other features such as article length, using stop words, adding tf-idf weighting, and optimizing current weighting of unigram,bigram,and trigrams. Even more accuracy improvements could potentially be gained by using a word to vector approach which would allow us to implement different machine learning models altogether such as a Support Vector Machines or Neural Networks.</p>
+                                            <p style="text-align: left;">After training this program with a dataset of
+                                                articles written by different authors it can predict which of these
+                                                authors has written an anonymous articles. This program utilizes
+                                                Multinomial Naive Bayes Multi Classisification with a bag-of-words
+                                                representation of the text.</br></br>
+                                                I implemented bigrams and trigrams as well as used the nltk library to
+                                                incorporate lemmetization as methods to improve my accuracy.
+                                                The accuracy could be further improved by implementing other features
+                                                such as article length, using stop words, adding tf-idf weighting, and
+                                                optimizing current weighting of unigram,bigram,and trigrams. Even more
+                                                accuracy improvements could potentially be gained by using a word to
+                                                vector approach which would allow us to implement different machine
+                                                learning models altogether such as a Support Vector Machines or Neural
+                                                Networks.</p>
                                             <p class="date">May 2020</p>
                                         </div>
-                                        <button onclick="window.location.href = 'https://github.com/Mgla96/AuthorPredictor'"
+                                        <button
+                                            onclick="window.location.href = 'https://github.com/Mgla96/AuthorPredictor'"
                                             type="button" class="btn btn-outline-dark ">
                                             View on <i class="fab fa-github"></i>
                                         </button>
@@ -224,8 +254,9 @@
                                     <div class="image">
                                         <figure
                                             class="mbr-figure mbr-figure--adapted mbr-figure--caption-inside-bottom mbr-figure--full-width">
-                                            <img src="css/images/helena-lopes.jpg" class="mbr-figure__img rounded img-fluid"
-                                                alt="Card 4" title="Sentiment Analysis">
+                                            <img src="css/images/helena-lopes.jpg"
+                                                class="mbr-figure__img rounded img-fluid" alt="Card 4"
+                                                title="Sentiment Analysis">
                                         </figure>
                                     </div>
                                     <h3 class="">Sentiment Analysis</h3>
@@ -238,10 +269,16 @@
                                     </button>
                                     <div class="collapse" id="collapse4">
                                         <div class="card card-body">
-                                            <p style="text-align: left;">This program determines the sentiment of a review and predicts whether it is a positive or negative review. I implemented a Multinomial Naive Bayes model with Bag-Of-Words and Stop Words. Multinomial Naive Bayes was implemented using log probabilities to eliminate the issue of underflow that results from large amounts of unique words used with Bag-Of-Words for the Naive Bayes model.</p>
+                                            <p style="text-align: left;">This program determines the sentiment of a
+                                                review and predicts whether it is a positive or negative review. I
+                                                implemented a Multinomial Naive Bayes model with Bag-Of-Words and Stop
+                                                Words. Multinomial Naive Bayes was implemented using log probabilities
+                                                to eliminate the issue of underflow that results from large amounts of
+                                                unique words used with Bag-Of-Words for the Naive Bayes model.</p>
                                             <p class="date">May 2020</p>
                                         </div>
-                                        <button onclick="window.location.href = 'https://github.com/Mgla96/SentimentAnalysis'"
+                                        <button
+                                            onclick="window.location.href = 'https://github.com/Mgla96/SentimentAnalysis'"
                                             type="button" class="btn btn-outline-dark ">
                                             View on <i class="fab fa-github"></i>
                                         </button>
@@ -254,8 +291,9 @@
                                     <div class="image">
                                         <figure
                                             class="mbr-figure mbr-figure--adapted mbr-figure--caption-inside-bottom mbr-figure--full-width">
-                                            <img src="css/images/linearclassifier.png" class="mbr-figure__img rounded img-fluid"
-                                                alt="Card 5" title="Linear Classifier">
+                                            <img src="css/images/linearclassifier.png"
+                                                class="mbr-figure__img rounded img-fluid" alt="Card 5"
+                                                title="Linear Classifier">
                                         </figure>
                                     </div>
                                     <h3 class="">3-Class Linear Classifier</h3>
@@ -268,16 +306,23 @@
                                     </button>
                                     <div class="collapse" id="collapse5">
                                         <div class="card card-body">
-                                            <p style="text-align: left;">This program is a basic linear classifier for 3 classes. This model is trained by computing the centroid of each class (e.g. A,B, and C) then constructs a discriminant function between each pair of classes
-                                                (e.g A/B, B/C, and A/C), halfway between the two centroids and orthogonal to the line connecting the two centroids. For testing it checks the discriminant function between "A or B" and then depending on that answer, decides "A or C" or "B or C". 
+                                            <p style="text-align: left;">This program is a basic linear classifier for 3
+                                                classes. This model is trained by computing the centroid of each class
+                                                (e.g. A,B, and C) then constructs a discriminant function between each
+                                                pair of classes
+                                                (e.g A/B, B/C, and A/C), halfway between the two centroids and
+                                                orthogonal to the line connecting the two centroids. For testing it
+                                                checks the discriminant function between "A or B" and then depending on
+                                                that answer, decides "A or C" or "B or C".
                                             </p>
                                             <p class="date">Apr 2020</p>
                                         </div>
-                                        <button onclick="window.location.href = 'https://github.com/Mgla96/3ClassLinearClassifier'"
+                                        <button
+                                            onclick="window.location.href = 'https://github.com/Mgla96/3ClassLinearClassifier'"
                                             type="button" class="btn btn-outline-dark ">
                                             View on <i class="fab fa-github"></i>
                                         </button>
-                                    
+
                                     </div>
                                 </div>
                             </div>
@@ -288,7 +333,8 @@
                                         <figure
                                             class="mbr-figure mbr-figure--adapted mbr-figure--caption-inside-bottom mbr-figure--full-width ">
                                             <img src="css/images/weightsinstock.png"
-                                                class="mbr-figure__img rounded img-fluid" alt="Card 1" title="Gomoku AI">
+                                                class="mbr-figure__img rounded img-fluid" alt="Card 1"
+                                                title="Gomoku AI">
                                         </figure>
                                     </div>
                                     <h3 class="styled">Gym Equipment Finder</h3>
@@ -301,12 +347,18 @@
                                     </button>
                                     <div class="collapse" id="collapse12">
                                         <div class="card card-body">
-                                            <p style="text-align: left;">Due to the closure of gyms because of COVID-19, fitness equipment was sold out everywhere and was very hard to come by. I created this web application that scrapes popular fitness websites every hour for in stock deals and displays them all in one place so all the effort of searching for in stock equipment is already done. I used the scraper successfully for myself when building a home gym and converted it into a web application for others to use as well.</p>
+                                            <p style="text-align: left;">Due to the closure of gyms because of COVID-19,
+                                                fitness equipment was sold out everywhere and was very hard to come by.
+                                                I created this web application that scrapes popular fitness websites
+                                                every hour for in stock deals and displays them all in one place so all
+                                                the effort of searching for in stock equipment is already done. I used
+                                                the scraper successfully for myself when building a home gym and
+                                                converted it into a web application for others to use as well.</p>
                                             <p class="date">Jul 2020</p>
                                         </div>
-                                        <button onclick="window.location.href = 'https://www.weightsinstock.com'" type="button"
-                                        class="btn btn-outline-dark ">
-                                        weightsinstock.com</i>
+                                        <button onclick="window.location.href = 'https://www.weightsinstock.com'"
+                                            type="button" class="btn btn-outline-dark ">
+                                            weightsinstock.com</i>
                                         </button>
                                     </div>
                                 </div>
@@ -320,7 +372,8 @@
                                         <figure
                                             class="mbr-figure mbr-figure--adapted mbr-figure--caption-inside-bottom mbr-figure--full-width ">
                                             <img src="css/images/oceanrecovery.JPG"
-                                                class="mbr-figure__img rounded img-fluid" alt="Card 6" title="Ocean Recovery Lab">
+                                                class="mbr-figure__img rounded img-fluid" alt="Card 6"
+                                                title="Ocean Recovery Lab">
                                         </figure>
                                     </div>
                                     <h3 class="styled">Ocean Recovery Lab</h3>
@@ -341,10 +394,19 @@
                                                 These scripts automate the mathematical modeling of their collected
                                                 data to their specific requirements.
                                                 </br></br>
-                                                The process of automating workflows and saving people time through software is very enjoyable for me. 
-                                                The researchers use a program called MetaShape in order to convert photos they have taken of coral into 3d models that they can use to measure the growth and health of coral reefs.
-                                                This process must be done for numerous models which require over 10 steps for each model. Some of these steps can't be done until previous rendering is complete which takes several hours so these researchers will have to be on standby to
-                                                manually use the computer and continue to the next step after rendering is done. The two programs I created for them automate this process for all models at once. The researchers are only required to do 1 manual step in total for all models to be complete, saving them valuable time.
+                                                The process of automating workflows and saving people time through
+                                                software is very enjoyable for me.
+                                                The researchers use a program called MetaShape in order to convert
+                                                photos they have taken of coral into 3d models that they can use to
+                                                measure the growth and health of coral reefs.
+                                                This process must be done for numerous models which require over 10
+                                                steps for each model. Some of these steps can't be done until previous
+                                                rendering is complete which takes several hours so these researchers
+                                                will have to be on standby to
+                                                manually use the computer and continue to the next step after rendering
+                                                is done. The two programs I created for them automate this process for
+                                                all models at once. The researchers are only required to do 1 manual
+                                                step in total for all models to be complete, saving them valuable time.
                                             </p>
                                             <p class="date">Jan 2020 - Mar 2020</p>
                                         </div>
@@ -377,32 +439,51 @@
                                     <div class="collapse" id="collapse7">
                                         <div class="card card-body">
                                             <p style="text-align: left;">
-                                                This web application is a multiplayer simulation game I developed for Professor de Vries which demonstrates the detrimental effects of 
-                                                unregulated human use of shared finite resources. This game is used in his CHEM 123 classes at UC Santa Barbara as an interactive learning tool for his students.
+                                                This web application is a multiplayer simulation game I developed for
+                                                Professor de Vries which demonstrates the detrimental effects of
+                                                unregulated human use of shared finite resources. This game is used in
+                                                his CHEM 123 classes at UC Santa Barbara as an interactive learning tool
+                                                for his students.
                                                 </br>
                                                 </br>
-                                                I really enjoyed working on this project because it allowed me to gain experience in the complete development cycle of a node.js web application in the front-end and back-end. In this project
-                                                I began by making ER-diagrams of how the MySQL database would be structured as well as prototypes of how I wanted the user and admin experience to look like. From there, I began developing the Node.js application using Express.js
-                                                which gave me more experience with routing and handling asynchronous database calls. Embedded Javascript was used for the Front-End which allowed for easier integration with the Express routing and middleware.
-                                                </br> 
+                                                I really enjoyed working on this project because it allowed me to gain
+                                                experience in the complete development cycle of a node.js web
+                                                application in the front-end and back-end. In this project
+                                                I began by making ER-diagrams of how the MySQL database would be
+                                                structured as well as prototypes of how I wanted the user and admin
+                                                experience to look like. From there, I began developing the Node.js
+                                                application using Express.js
+                                                which gave me more experience with routing and handling asynchronous
+                                                database calls. Embedded Javascript was used for the Front-End which
+                                                allowed for easier integration with the Express routing and middleware.
                                                 </br>
-                                                After completing the application, I got to work with the Chemistry Server department in placing this web application on their servers. In doing so, I learned about process managers such as PM2 and Forever that allow the application to continue running on the specified port. 
-                                                The application was uploaded through SFTP and Apache was used to set up a reverse proxy so that the URL to the application on the Chemistry servers is accesible to the world, not just the UCSB network. 
+                                                </br>
+                                                After completing the application, I got to work with the Chemistry
+                                                Server department in placing this web application on their servers. In
+                                                doing so, I learned about process managers such as PM2 and Forever that
+                                                allow the application to continue running on the specified port.
+                                                The application was uploaded through SFTP and Apache was used to set up
+                                                a reverse proxy so that the URL to the application on the Chemistry
+                                                servers is accesible to the world, not just the UCSB network.
                                                 </br>
                                                 </br>
-                                                The game requires a username and password to login but if you would like to learn more about this project and see what the User and Admin experience looks like in the application please see the github repository below.
+                                                The game requires a username and password to login but if you would like
+                                                to learn more about this project and see what the User and Admin
+                                                experience looks like in the application please see the github
+                                                repository below.
                                             </p>
                                             <p class="date">Jan 2020 - Apr 2020</p>
                                         </div>
                                         <div class="mb-2">
-                                        <button onclick="window.location.href = 'https://github.com/Mgla96/HappyCows'"
-                                            type="button" class="btn btn-outline-dark ">
-                                            View on <i class="fab fa-github"></i>
-                                        </button>
+                                            <button
+                                                onclick="window.location.href = 'https://github.com/Mgla96/HappyCows'"
+                                                type="button" class="btn btn-outline-dark ">
+                                                View on <i class="fab fa-github"></i>
+                                            </button>
                                         </div>
-                                        <button onclick="window.location.href = 'https://chem123.chem.ucsb.edu/'" type="button"
-                                        class="btn btn-outline-dark ">
-                                        chem123.chem.ucsb.edu</i>
+                                        <button onclick="window.location.href = 'https://chem123.chem.ucsb.edu/'"
+                                            type="button" class="btn btn-outline-dark ">
+                                            chem123.chem.ucsb.edu</i>
                                         </button>
                                     </div>
                                 </div>
@@ -428,8 +509,10 @@
                                     </button>
                                     <div class="collapse" id="collapse8">
                                         <div class="card card-body">
-                                            <p style="text-align: left;">Designed and developed the website and ecommerce platform for a
-                                                startup called LocNes. This website is on standby and is ready to publish once
+                                            <p style="text-align: left;">Designed and developed the website and
+                                                ecommerce platform for a
+                                                startup called LocNes. This website is on standby and is ready to
+                                                publish once
                                                 further manufacturing progress is made</p>
                                             <p class="date">Mar 2019 - Jan 2020</p>
                                         </div>
@@ -447,7 +530,8 @@
                                         <figure
                                             class="mbr-figure mbr-figure--adapted mbr-figure--caption-inside-bottom mbr-figure--full-width">
                                             <img src="css/images/walterreed.png"
-                                                class="mbr-figure__img rounded img-fluid" alt="Card 9" title="Walter Reed Medical Center">
+                                                class="mbr-figure__img rounded img-fluid" alt="Card 9"
+                                                title="Walter Reed Medical Center">
                                         </figure>
                                     </div>
                                     <h3 class="">Walter Reed National Military Medical Center</h3>
@@ -460,7 +544,8 @@
                                     </button>
                                     <div class="collapse" id="collapse9">
                                         <div class="card card-body">
-                                            <p style="text-align: left;">Gained hands on experience working in their state-of-the-art 3D
+                                            <p style="text-align: left;">Gained hands on experience working in their
+                                                state-of-the-art 3D
                                                 Printing facility, which focuses on creating devices for medical
                                                 applications such as prosthetics.
                                                 Produced multiple medical devices, which are still currently
@@ -492,7 +577,8 @@
                                     </button>
                                     <div class="collapse" id="collapse10">
                                         <div class="card card-body">
-                                            <p style="text-align: left;">Assembled a prototype account management system that maintains balance
+                                            <p style="text-align: left;">Assembled a prototype account management system
+                                                that maintains balance
                                                 information of all customer accounts, processes transactions, generates
                                                 monthly reports, and updates accounts with monthly interest. It features
                                                 a simulated ATM application for customers and an interface for Bank
@@ -510,7 +596,8 @@
                                         <figure
                                             class="mbr-figure mbr-figure--adapted mbr-figure--caption-inside-bottom mbr-figure--full-width">
                                             <img src="css/images/React_Native_Logo.png"
-                                                class="mbr-figure__img rounded img-fluid" alt="Card 11" title="Rideshare">
+                                                class="mbr-figure__img rounded img-fluid" alt="Card 11"
+                                                title="Rideshare">
                                         </figure>
                                     </div>
                                     <h3 class="">College Rideshare</h3>
@@ -524,7 +611,8 @@
                                     </button>
                                     <div class="collapse" id="collapse11">
                                         <div class="card card-body">
-                                            <p style="text-align: left;">Developed a functional cross-platform Rideshare app for college students
+                                            <p style="text-align: left;">Developed a functional cross-platform Rideshare
+                                                app for college students
                                                 with two other Computer Science students.
                                             </p>
                                             <p class="date">Apr 2018 - Jan 2019</p>
@@ -552,7 +640,8 @@
                                     </button>
                                     <div class="collapse" id="collapse12">
                                         <div class="card card-body">
-                                            <p style="text-align: left;">Developed a Linux Operating System in C for CS170-Operating Systems class at UCSB.
+                                            <p style="text-align: left;">Developed a Linux Operating System in C for
+                                                CS170-Operating Systems class at UCSB.
                                             </p>
                                             <p class="date">Sep 2019 - Dec 2019</p>
                                         </div>
@@ -579,7 +668,8 @@
                                     </button>
                                     <div class="collapse" id="collapse13">
                                         <div class="card card-body">
-                                            <p style="text-align: left;">Constructed a custom 3D Printer which uses a Raspberry Pi to
+                                            <p style="text-align: left;">Constructed a custom 3D Printer which uses a
+                                                Raspberry Pi to
                                                 access the printer over the local network.
                                                 Gained experience with CAD by designing parts for projects made
                                                 with this printer.
@@ -609,7 +699,8 @@
                                     </button>
                                     <div class="collapse" id="collapse14">
                                         <div class="card card-body">
-                                            <p style="text-align: left;">Built a functional and fast first-person-view quadcopter to
+                                            <p style="text-align: left;">Built a functional and fast first-person-view
+                                                quadcopter to
                                                 gain a better understanding of how all the software and hardware
                                                 components work together.
                                             </p>
@@ -638,7 +729,8 @@
                                     </button>
                                     <div class="collapse" id="collapse15">
                                         <div class="card card-body">
-                                            <p style="text-align: left;">Assembled a computer that uses hashing algorithms to process and
+                                            <p style="text-align: left;">Assembled a computer that uses hashing
+                                                algorithms to process and
                                                 verify transactions between cryptocurrency users as well as
                                                 solve the nonce number for new blocks in the Ethereum
                                                 blockchain. Gained more experience with Hashing algorithms, GPU
@@ -689,21 +781,21 @@
                     {
                         breakpoint: 768,
                         options: {
-                            maxParticles: 200,
+                            maxParticles: 50,
                             color: '#ffdf00',
                             connectParticles: false
                         }
                     }, {
                         breakpoint: 425,
                         options: {
-                            maxParticles: 120,
+                            maxParticles: 30,
                             connectParticles: false,
                             color: '#ffdf00'
                         }
                     }, {
                         breakpoint: 320,
                         options: {
-                            maxParticles: 35,
+                            maxParticles: 20,
                             connectParticles: false,
                             color: '#ffdf00'
                         }
@@ -712,7 +804,6 @@
             });
         };
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <script>
         AOS.init();
     </script>
@@ -726,9 +817,3 @@
 </body>
 
 </html>
-
-    <!--extra
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    -->

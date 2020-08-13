@@ -45,19 +45,21 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
+                    <!--
                     <li class="nav-item">
                         <a class="nav-link" href="index.html#home">
                             <ion-icon style="margin-right: 5px" name="home"></ion-icon>Home
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">
-                            <ion-icon style="margin-right: 5px" name="person"></ion-icon>About
-                        </a>
-                    </li>
+                    -->
                     <li class="nav-item">
                         <a class="nav-link" href="index.html#projects">
                             <ion-icon style="margin-right: 5px" name="hammer"></ion-icon>Projects
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#about">
+                            <ion-icon style="margin-right: 5px" name="person"></ion-icon>About
                         </a>
                     </li>
                     <li class="nav-item">
@@ -75,7 +77,7 @@
         </div>
     </nav>
 
-    <div class="header-photo main" id="home">
+    <div class="header-photo main" id="about">
         <canvas class="background"></canvas>
         <div class="container">
             <div class="row">
@@ -267,6 +269,12 @@
     </script>
     <script>
         AOS.init();
+    </script>
+    <script>
+        $(".nav-item .nav-link").on("click", function () {
+            $(".nav-item").find(".active").removeClass("active");
+            $(this).addClass("active");
+        });
     </script>
 </body>
 

@@ -4,6 +4,6 @@
     "private": true,
     "dependencies": {
         "simplex-noise": "^2.4.0",
-        "three": "^0.115.0"
+        "three": "^0.125.0"
     }
 }
